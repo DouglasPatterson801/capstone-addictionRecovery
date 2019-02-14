@@ -12,7 +12,13 @@
 		2F9B712C220DD575001CC363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B712A220DD575001CC363 /* Main.storyboard */; };
 		2F9B712E220DD577001CC363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B712D220DD577001CC363 /* Assets.xcassets */; };
 		2F9B7131220DD577001CC363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B712F220DD577001CC363 /* LaunchScreen.storyboard */; };
-		2F9B7139220DEFBC001CC363 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B7138220DEFBC001CC363 /* File.swift */; };
+		2F9B7139220DEFBC001CC363 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B7138220DEFBC001CC363 /* RoundButton.swift */; };
+		2F9B713E22136195001CC363 /* SobrietyDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B713D22136195001CC363 /* SobrietyDate.swift */; };
+		2F9B7145221498BA001CC363 /* MotivationalQuote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B7143221498BA001CC363 /* MotivationalQuote.xcdatamodeld */; };
+		2F9B7147221499A4001CC363 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B7146221499A4001CC363 /* quotes.json */; };
+		2F9B71492215BBC5001CC363 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B71482215BBC5001CC363 /* QuoteController.swift */; };
+		2F9B714B2215C06E001CC363 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B714A2215C06E001CC363 /* NetworkController.swift */; };
+		2F9B714D2215CF38001CC363 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B714C2215CF38001CC363 /* CurrentDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +29,13 @@
 		2F9B712D220DD577001CC363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F9B7130220DD577001CC363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F9B7132220DD577001CC363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F9B7138220DEFBC001CC363 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		2F9B7138220DEFBC001CC363 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		2F9B713D22136195001CC363 /* SobrietyDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobrietyDate.swift; sourceTree = "<group>"; };
+		2F9B7144221498BA001CC363 /* MotivationalQuote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MotivationalQuote.xcdatamodel; sourceTree = "<group>"; };
+		2F9B7146221499A4001CC363 /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		2F9B71482215BBC5001CC363 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
+		2F9B714A2215C06E001CC363 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		2F9B714C2215CF38001CC363 /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,45 @@
 		2F9B7125220DD575001CC363 /* RecoveryConnections */ = {
 			isa = PBXGroup;
 			children = (
-				2F9B7126220DD575001CC363 /* AppDelegate.swift */,
-				2F9B7128220DD575001CC363 /* ViewController.swift */,
 				2F9B712A220DD575001CC363 /* Main.storyboard */,
-				2F9B7138220DEFBC001CC363 /* File.swift */,
+				2F9B713A22135FF5001CC363 /* Model */,
+				2F9B713B2213600D001CC363 /* Controller */,
+				2F9B713C22136029001CC363 /* View */,
 				2F9B712D220DD577001CC363 /* Assets.xcassets */,
 				2F9B712F220DD577001CC363 /* LaunchScreen.storyboard */,
 				2F9B7132220DD577001CC363 /* Info.plist */,
 			);
 			path = RecoveryConnections;
+			sourceTree = "<group>";
+		};
+		2F9B713A22135FF5001CC363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F9B713D22136195001CC363 /* SobrietyDate.swift */,
+				2F9B714C2215CF38001CC363 /* CurrentDate.swift */,
+				2F9B7146221499A4001CC363 /* quotes.json */,
+				2F9B7143221498BA001CC363 /* MotivationalQuote.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F9B713B2213600D001CC363 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F9B7126220DD575001CC363 /* AppDelegate.swift */,
+				2F9B71482215BBC5001CC363 /* QuoteController.swift */,
+				2F9B714A2215C06E001CC363 /* NetworkController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F9B713C22136029001CC363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F9B7138220DEFBC001CC363 /* RoundButton.swift */,
+				2F9B7128220DD575001CC363 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +169,7 @@
 			files = (
 				2F9B7131220DD577001CC363 /* LaunchScreen.storyboard in Resources */,
 				2F9B712E220DD577001CC363 /* Assets.xcassets in Resources */,
+				2F9B7147221499A4001CC363 /* quotes.json in Resources */,
 				2F9B712C220DD575001CC363 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9B71492215BBC5001CC363 /* QuoteController.swift in Sources */,
+				2F9B713E22136195001CC363 /* SobrietyDate.swift in Sources */,
 				2F9B7129220DD575001CC363 /* ViewController.swift in Sources */,
-				2F9B7139220DEFBC001CC363 /* File.swift in Sources */,
+				2F9B7139220DEFBC001CC363 /* RoundButton.swift in Sources */,
 				2F9B7127220DD575001CC363 /* AppDelegate.swift in Sources */,
+				2F9B714D2215CF38001CC363 /* CurrentDate.swift in Sources */,
+				2F9B714B2215C06E001CC363 /* NetworkController.swift in Sources */,
+				2F9B7145221498BA001CC363 /* MotivationalQuote.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +386,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2F9B7143221498BA001CC363 /* MotivationalQuote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2F9B7144221498BA001CC363 /* MotivationalQuote.xcdatamodel */,
+			);
+			currentVersion = 2F9B7144221498BA001CC363 /* MotivationalQuote.xcdatamodel */;
+			path = MotivationalQuote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2F9B711B220DD575001CC363 /* Project object */;
 }
