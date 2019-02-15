@@ -23,15 +23,17 @@ class QuoteController {
     var day = 0
     
     
+    
+    
+    //==================================================
+    // MARK: - Actions
+    //==================================================
+    //OBTAIN MONTH AND DAY IN ORDER TO LOCATE QUOTE FROM 
     func initializeDate() {
         let calendar = Calendar.current
         month = calendar.component(.month, from: currentDate)
         day = calendar.component(.day, from: currentDate)
     }
-    
-    //==================================================
-    // MARK: - Actions
-    //==================================================
     
     // RETRIEVE QUOTE FROM JSON FOR CURRENT DATE
     func getDailyQuote() {
