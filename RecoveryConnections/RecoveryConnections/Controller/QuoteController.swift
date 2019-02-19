@@ -28,20 +28,37 @@ class QuoteController {
     //==================================================
     // MARK: - Actions
     //==================================================
-    //OBTAIN MONTH AND DAY IN ORDER TO LOCATE QUOTE FROM 
+    //OBTAIN MONTH AND DAY IN ORDER TO LOCATE QUOTE FROM JSON
     func initializeDate() {
         let calendar = Calendar.current
         month = calendar.component(.month, from: currentDate)
         day = calendar.component(.day, from: currentDate)
+        
+        
     }
     
     // RETRIEVE QUOTE FROM JSON FOR CURRENT DATE
-    func getDailyQuote() {
+    
+    //next to do: return a Quote
+    func getDailyQuote() -> Quote? {
         initializeDate()
         
-        if let url = Bundle.main.url(forResource: "quotes", withExtension: "json") {
-        let data = try? Data(contentsOf: url)
-        }        
+        guard let url = Bundle.main.url(forResource: "Quotes", withExtension: "json"),
+            let data = try? Data(contentsOf: url) else {
+                print("Unable to obtain data from url")
+                return nil }
+        let jsonObjects = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        if let quotesDictionary = jsonObjects as? Dictionary<String, String>,
+            let quote = quotesDictionary["\(month)-\(day)"] {
+            print(quote)
+            let quoteObject = Quote(quoteText: quote)
+            return quoteObject
+        } else {
+            print("Unable to return quote text")
+            return nil
+        }
+        
+        
     }
 }
 
