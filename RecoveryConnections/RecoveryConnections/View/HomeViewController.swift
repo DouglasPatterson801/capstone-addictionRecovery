@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     //==================================================
     
     let dailyQuote: Quote? = {
+        
         QuoteController.sharedController.getDailyQuote()
     }()
     
@@ -25,8 +26,9 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dailyQuoteLabel.text = "\(dailyQuote)"
-        
+        if let quote = dailyQuote {
+        dailyQuoteLabel.text = "\(quote.quoteText)"
+        }
     }
     
 
