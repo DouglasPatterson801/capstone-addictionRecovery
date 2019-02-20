@@ -33,13 +33,9 @@ class QuoteController {
         let calendar = Calendar.current
         month = calendar.component(.month, from: currentDate)
         day = calendar.component(.day, from: currentDate)
-        
-        
     }
     
     // RETRIEVE QUOTE FROM JSON FOR CURRENT DATE
-    
-    //next to do: return a Quote
     func getDailyQuote() -> Quote? {
         initializeDate()
 
