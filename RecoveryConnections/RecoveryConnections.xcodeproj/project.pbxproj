@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F5C46E7221DA2ED008C1491 /* CommitmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */; };
 		2F8BDAB6221CAAC000243D41 /* Commitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BDAB5221CAAC000243D41 /* Commitment.swift */; };
-		2F8BDAB8221CB3F600243D41 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BDAB7221CB3F600243D41 /* CoreDataController.swift */; };
 		2F8BDABB221CBFA200243D41 /* Commitment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BDAB9221CBFA200243D41 /* Commitment.xcdatamodeld */; };
 		2F8BDABD221CC1EA00243D41 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BDABC221CC1EA00243D41 /* Stack.swift */; };
 		2F9B7127220DD575001CC363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B7126220DD575001CC363 /* AppDelegate.swift */; };
@@ -25,8 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitmentController.swift; sourceTree = "<group>"; };
 		2F8BDAB5221CAAC000243D41 /* Commitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commitment.swift; sourceTree = "<group>"; };
-		2F8BDAB7221CB3F600243D41 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		2F8BDABA221CBFA200243D41 /* Commitment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Commitment.xcdatamodel; sourceTree = "<group>"; };
 		2F8BDABC221CC1EA00243D41 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		2F9B7123220DD575001CC363 /* RecoveryConnections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecoveryConnections.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,9 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				2F9B7126220DD575001CC363 /* AppDelegate.swift */,
+				2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */,
 				2F9B71482215BBC5001CC363 /* QuoteController.swift */,
 				2F9B714A2215C06E001CC363 /* NetworkController.swift */,
-				2F8BDAB7221CB3F600243D41 /* CoreDataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,12 +194,12 @@
 				2F9B7139220DEFBC001CC363 /* RoundButton.swift in Sources */,
 				2F8BDABB221CBFA200243D41 /* Commitment.xcdatamodeld in Sources */,
 				2F9B715522173482001CC363 /* HomeViewController.swift in Sources */,
-				2F8BDAB8221CB3F600243D41 /* CoreDataController.swift in Sources */,
 				2F8BDABD221CC1EA00243D41 /* Stack.swift in Sources */,
 				2F9B715322172E66001CC363 /* Quote.swift in Sources */,
 				2F8BDAB6221CAAC000243D41 /* Commitment.swift in Sources */,
 				2F9B7127220DD575001CC363 /* AppDelegate.swift in Sources */,
 				2F9B714D2215CF38001CC363 /* CurrentDate.swift in Sources */,
+				2F5C46E7221DA2ED008C1491 /* CommitmentController.swift in Sources */,
 				2F9B714B2215C06E001CC363 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

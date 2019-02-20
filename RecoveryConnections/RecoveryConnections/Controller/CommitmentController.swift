@@ -1,21 +1,24 @@
 //
-//  CoreDataController.swift
+//  CommitmentController.swift
 //  RecoveryConnections
 //
-//  Created by Douglas Patterson on 2/19/19.
+//  Created by Douglas Patterson on 2/20/19.
 //  Copyright © 2019 Douglas Patterson. All rights reserved.
 //
 
 import Foundation
 import CoreData
+import UIKit
 
-class CoreDataController {
-
-    static let sharedController = CoreDataController()
+class CommitmentController {
     
-    var quoteArray: [Commitment] {
+    //==================================================
+    // MARK: - Properties
+    //==================================================
+    
+    static let sharedController = CommitmentController()
+    var commitmentArray: [Commitment] {
         let request: NSFetchRequest<Commitment> = Commitment.fetchRequest()
-        
         do {
             return try Stack.context.fetch(request)
         } catch {
@@ -36,5 +39,4 @@ class CoreDataController {
             print("Error. Could not save to persistent storage.")
         }
     }
-
 }
