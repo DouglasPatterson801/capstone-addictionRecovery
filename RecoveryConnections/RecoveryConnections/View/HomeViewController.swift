@@ -13,9 +13,8 @@ class HomeViewController: UIViewController {
     //==================================================
     // MARK: - Properties
     //==================================================
-    
+    let backGroundImageView = UIImageView()
     let dailyQuote: Quote? = {
-        
         QuoteController.sharedController.getDailyQuote()
     }()
     
@@ -23,11 +22,31 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dailyQuoteLabel: UILabel!
     
     
-
+    //==================================================
+    // MARK: - Actions
+    //==================================================
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateDailyQuote()
+        getBackGroundImage()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.backGroundImageView.frame = self.view.bounds
+    }
+    
+    func getBackGroundImage() {
+        let image = UIImage(named: "riverImage3")
+        self.backGroundImageView.contentMode = .scaleAspectFill
+        self.backGroundImageView.image = image
+        self.view.addSubview(backGroundImageView)
+        view.sendSubviewToBack(backGroundImageView)
+    }
+    
+    func populateDailyQuote() {
         if let quote = dailyQuote {
-        dailyQuoteLabel.text = "\(quote.quoteText)"
+            dailyQuoteLabel.text = "\(quote.quoteText)"
         }
     }
     

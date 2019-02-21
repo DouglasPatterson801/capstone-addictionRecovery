@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F17E715221F025E0075F804 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E714221F025E0075F804 /* TabBarController.swift */; };
 		2F5C46E7221DA2ED008C1491 /* CommitmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */; };
 		2F8BDAB6221CAAC000243D41 /* Commitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BDAB5221CAAC000243D41 /* Commitment.swift */; };
 		2F8BDABB221CBFA200243D41 /* Commitment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BDAB9221CBFA200243D41 /* Commitment.xcdatamodeld */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F17E714221F025E0075F804 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitmentController.swift; sourceTree = "<group>"; };
 		2F8BDAB5221CAAC000243D41 /* Commitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commitment.swift; sourceTree = "<group>"; };
 		2F8BDABA221CBFA200243D41 /* Commitment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Commitment.xcdatamodel; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				2F9B7138220DEFBC001CC363 /* RoundButton.swift */,
 				2F9B715422173482001CC363 /* HomeViewController.swift */,
+				2F17E714221F025E0075F804 /* TabBarController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				2F8BDAB6221CAAC000243D41 /* Commitment.swift in Sources */,
 				2F9B7127220DD575001CC363 /* AppDelegate.swift in Sources */,
 				2F9B714D2215CF38001CC363 /* CurrentDate.swift in Sources */,
+				2F17E715221F025E0075F804 /* TabBarController.swift in Sources */,
 				2F5C46E7221DA2ED008C1491 /* CommitmentController.swift in Sources */,
 				2F9B714B2215C06E001CC363 /* NetworkController.swift in Sources */,
 			);
