@@ -25,12 +25,12 @@ class HomeViewController: UIViewController {
     //==================================================
     // MARK: - Actions
     //==================================================
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         populateDailyQuote()
         getBackGroundImage()
     }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.backGroundImageView.frame = self.view.bounds

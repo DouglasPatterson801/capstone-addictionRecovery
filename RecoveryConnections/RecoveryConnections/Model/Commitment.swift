@@ -11,21 +11,15 @@ import CoreData
 
 extension Commitment {
     
-    convenience init?(dictionary: Dictionary<String, Any>, context: NSManagedObjectContext = Stack.context) {
-        guard let startDate = dictionary["startDate"] as? Date,
-            let reason = dictionary["reason"] as? String,
-            let commitmentMade = dictionary["commitmentMade"] as? Bool,
-            let commitmentKept = dictionary["commitmentKept"] as? Bool,
-            let difficulty = dictionary["difficulty"] as? Int16,
-            let notes = dictionary["notes"] as? String else { return nil }
-        
+    convenience init?(startDate: Date, reason: String, commitmentMade: Bool, commitmentKept: Bool, diffictuly: Int16, notes: String,context: NSManagedObjectContext = Stack.context) {
+      
         self.init(context: context)
 
         self.startDate = startDate
         self.reason = reason
         self.commitmentMade = commitmentMade
         self.commitmentKept = commitmentKept
-        self.difficulty = difficulty
+        self.difficulty = diffictuly
         self.notes = notes
     }
 }

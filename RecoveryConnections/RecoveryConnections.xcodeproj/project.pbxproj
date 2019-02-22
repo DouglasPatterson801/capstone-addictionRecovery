@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2F17E715221F025E0075F804 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E714221F025E0075F804 /* TabBarController.swift */; };
+		2F17E71722204B6E0075F804 /* FollowUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E71622204B6E0075F804 /* FollowUpTableViewController.swift */; };
+		2F17E71B2220587D0075F804 /* MakeCommitmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E71A2220587D0075F804 /* MakeCommitmentViewController.swift */; };
+		2F17E71D22205B630075F804 /* CommitmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E71C22205B630075F804 /* CommitmentListTableViewController.swift */; };
+		2F17E72322205DF90075F804 /* FollowUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E72222205DF90075F804 /* FollowUpCell.swift */; };
 		2F5C46E7221DA2ED008C1491 /* CommitmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */; };
 		2F8BDAB6221CAAC000243D41 /* Commitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BDAB5221CAAC000243D41 /* Commitment.swift */; };
 		2F8BDABB221CBFA200243D41 /* Commitment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BDAB9221CBFA200243D41 /* Commitment.xcdatamodeld */; };
@@ -18,7 +22,6 @@
 		2F9B7131220DD577001CC363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B712F220DD577001CC363 /* LaunchScreen.storyboard */; };
 		2F9B7139220DEFBC001CC363 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B7138220DEFBC001CC363 /* RoundButton.swift */; };
 		2F9B71492215BBC5001CC363 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B71482215BBC5001CC363 /* QuoteController.swift */; };
-		2F9B714B2215C06E001CC363 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B714A2215C06E001CC363 /* NetworkController.swift */; };
 		2F9B714D2215CF38001CC363 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B714C2215CF38001CC363 /* CurrentDate.swift */; };
 		2F9B715122172DE4001CC363 /* Quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B715022172DE4001CC363 /* Quotes.json */; };
 		2F9B715322172E66001CC363 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B715222172E66001CC363 /* Quote.swift */; };
@@ -27,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		2F17E714221F025E0075F804 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2F17E71622204B6E0075F804 /* FollowUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpTableViewController.swift; sourceTree = "<group>"; };
+		2F17E71A2220587D0075F804 /* MakeCommitmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCommitmentViewController.swift; sourceTree = "<group>"; };
+		2F17E71C22205B630075F804 /* CommitmentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitmentListTableViewController.swift; sourceTree = "<group>"; };
+		2F17E72222205DF90075F804 /* FollowUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpCell.swift; sourceTree = "<group>"; };
 		2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitmentController.swift; sourceTree = "<group>"; };
 		2F8BDAB5221CAAC000243D41 /* Commitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commitment.swift; sourceTree = "<group>"; };
 		2F8BDABA221CBFA200243D41 /* Commitment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Commitment.xcdatamodel; sourceTree = "<group>"; };
@@ -39,7 +46,6 @@
 		2F9B7132220DD577001CC363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F9B7138220DEFBC001CC363 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		2F9B71482215BBC5001CC363 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
-		2F9B714A2215C06E001CC363 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2F9B714C2215CF38001CC363 /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
 		2F9B715022172DE4001CC363 /* Quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quotes.json; sourceTree = "<group>"; };
 		2F9B715222172E66001CC363 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
@@ -57,6 +63,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F17E71E22205B7E0075F804 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2F9B715422173482001CC363 /* HomeViewController.swift */,
+				2F9B71482215BBC5001CC363 /* QuoteController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2F17E71F22205B840075F804 /* Commitments */ = {
+			isa = PBXGroup;
+			children = (
+				2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */,
+				2F17E71C22205B630075F804 /* CommitmentListTableViewController.swift */,
+				2F17E71A2220587D0075F804 /* MakeCommitmentViewController.swift */,
+				2F17E72122205DD00075F804 /* FollowUp */,
+			);
+			path = Commitments;
+			sourceTree = "<group>";
+		};
+		2F17E72022205B8F0075F804 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2F17E72122205DD00075F804 /* FollowUp */ = {
+			isa = PBXGroup;
+			children = (
+				2F17E72222205DF90075F804 /* FollowUpCell.swift */,
+				2F17E71622204B6E0075F804 /* FollowUpTableViewController.swift */,
+			);
+			path = FollowUp;
+			sourceTree = "<group>";
+		};
 		2F9B711A220DD575001CC363 = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				2F9B7126220DD575001CC363 /* AppDelegate.swift */,
-				2F5C46E6221DA2ED008C1491 /* CommitmentController.swift */,
-				2F9B71482215BBC5001CC363 /* QuoteController.swift */,
-				2F9B714A2215C06E001CC363 /* NetworkController.swift */,
+				2F17E71E22205B7E0075F804 /* Home */,
+				2F17E71F22205B840075F804 /* Commitments */,
+				2F17E72022205B8F0075F804 /* Resources */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				2F9B7138220DEFBC001CC363 /* RoundButton.swift */,
-				2F9B715422173482001CC363 /* HomeViewController.swift */,
 				2F17E714221F025E0075F804 /* TabBarController.swift */,
 			);
 			path = View;
@@ -195,6 +236,8 @@
 			files = (
 				2F9B71492215BBC5001CC363 /* QuoteController.swift in Sources */,
 				2F9B7139220DEFBC001CC363 /* RoundButton.swift in Sources */,
+				2F17E71722204B6E0075F804 /* FollowUpTableViewController.swift in Sources */,
+				2F17E71B2220587D0075F804 /* MakeCommitmentViewController.swift in Sources */,
 				2F8BDABB221CBFA200243D41 /* Commitment.xcdatamodeld in Sources */,
 				2F9B715522173482001CC363 /* HomeViewController.swift in Sources */,
 				2F8BDABD221CC1EA00243D41 /* Stack.swift in Sources */,
@@ -203,8 +246,9 @@
 				2F9B7127220DD575001CC363 /* AppDelegate.swift in Sources */,
 				2F9B714D2215CF38001CC363 /* CurrentDate.swift in Sources */,
 				2F17E715221F025E0075F804 /* TabBarController.swift in Sources */,
+				2F17E71D22205B630075F804 /* CommitmentListTableViewController.swift in Sources */,
+				2F17E72322205DF90075F804 /* FollowUpCell.swift in Sources */,
 				2F5C46E7221DA2ED008C1491 /* CommitmentController.swift in Sources */,
-				2F9B714B2215C06E001CC363 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

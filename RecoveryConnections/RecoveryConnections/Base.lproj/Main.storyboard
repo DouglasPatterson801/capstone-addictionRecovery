@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Commitment List Table View Controller-->
         <scene sceneID="ha2-z0-8tq">
             <objects>
-                <tableViewController id="yiA-1U-x46" sceneMemberID="viewController">
+                <tableViewController id="yiA-1U-x46" customClass="CommitmentListTableViewController" customModule="RecoveryConnections" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d5q-Gc-b59">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="goc-lU-N9n" kind="show" id="ZY5-NP-pgl"/>
+                                    <segue destination="goc-lU-N9n" kind="show" id="3eF-1R-3OH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,9 +105,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dGc-4c-yBJ">
-                        <barButtonItem key="rightBarButtonItem" title="Commit" id="11K-3v-j9J">
+                        <barButtonItem key="rightBarButtonItem" title="Today's Commitment" id="11K-3v-j9J">
                             <connections>
-                                <segue destination="nVo-G3-oxv" kind="show" id="u5j-ZC-V5H"/>
+                                <segue destination="nVo-G3-oxv" kind="show" id="Xz0-mr-5O0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="2020" y="839"/>
         </scene>
-        <!--View Controller-->
+        <!--Make Commitment View Controller-->
         <scene sceneID="yRo-3h-BVt">
             <objects>
-                <viewController id="nVo-G3-oxv" sceneMemberID="viewController">
+                <viewController id="nVo-G3-oxv" customClass="MakeCommitmentViewController" customModule="RecoveryConnections" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jE9-ns-hdJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,6 +165,9 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="commitButtonTapped:" destination="nVo-G3-oxv" eventType="touchUpInside" id="7kG-bc-PLM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,15 +184,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Krv-lX-Yr4"/>
                     </view>
+                    <connections>
+                        <outlet property="commitButton" destination="zy8-gz-3fV" id="F1P-nd-0j2"/>
+                        <outlet property="motivationalImage" destination="hvL-c8-D2o" id="aKq-or-MIr"/>
+                        <outlet property="reasonTextField" destination="Ph7-OL-jAu" id="5KN-MK-pJP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdA-14-wse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3133.5999999999999" y="496.10194902548727"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Commitment List Table View Controller-->
         <scene sceneID="MUm-zh-zob">
             <objects>
-                <tableViewController id="goc-lU-N9n" sceneMemberID="viewController">
+                <tableViewController id="goc-lU-N9n" customClass="CommitmentListTableViewController" customModule="RecoveryConnections" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Yq-OX-rlC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +205,7 @@
                         <sections>
                             <tableViewSection id="IsR-vj-BKl">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="followupCell" rowHeight="786" id="uSa-ou-kC2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="followupCell" rowHeight="786" id="uSa-ou-kC2" customClass="FollowUpTableViewCell" customModule="RecoveryConnections" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="786"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uSa-ou-kC2" id="wtf-go-xLR">
@@ -240,27 +248,27 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="as9-sJ-1g3">
-                                                    <rect key="frame" x="60.5" y="548" width="254" height="30"/>
+                                                    <rect key="frame" x="80.5" y="548" width="214" height="22"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-Vo-rZ1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                            <color key="backgroundColor" red="0.35445826749999998" green="1" blue="0.67689322119999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-Vo-rZ1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                            <state key="normal" image="difficultyOne"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLq-k8-GyL">
-                                                            <rect key="frame" x="56" y="0.0" width="30" height="30"/>
-                                                            <color key="backgroundColor" red="0.35445826749999998" green="1" blue="0.67689322119999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLq-k8-GyL">
+                                                            <rect key="frame" x="48" y="0.0" width="22" height="22"/>
+                                                            <state key="normal" image="difficultyTwo"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51U-EW-y35">
-                                                            <rect key="frame" x="112" y="0.0" width="30" height="30"/>
-                                                            <color key="backgroundColor" red="0.35445826749999998" green="1" blue="0.67689322119999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51U-EW-y35">
+                                                            <rect key="frame" x="96" y="0.0" width="22" height="22"/>
+                                                            <state key="normal" image="difficultyThree"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8h-eI-F7d">
-                                                            <rect key="frame" x="168" y="0.0" width="30" height="30"/>
-                                                            <color key="backgroundColor" red="0.35445826749999998" green="1" blue="0.67689322119999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8h-eI-F7d">
+                                                            <rect key="frame" x="144" y="0.0" width="22" height="22"/>
+                                                            <state key="normal" image="difficultyFour"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofm-Zj-BRZ">
-                                                            <rect key="frame" x="224" y="0.0" width="30" height="30"/>
-                                                            <color key="backgroundColor" red="0.35445826749999998" green="1" blue="0.67689322119999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofm-Zj-BRZ">
+                                                            <rect key="frame" x="192" y="0.0" width="22" height="22"/>
+                                                            <state key="normal" image="difficultyFive"/>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -306,26 +314,42 @@
                             <outlet property="delegate" destination="goc-lU-N9n" id="fqq-L2-vfJ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="commitmentKeptControl" destination="yzn-SP-eba" id="dxI-3v-EiO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKl-Yk-0UM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3133.5999999999999" y="1256.2218890554723"/>
         </scene>
         <!--Resources-->
-        <scene sceneID="Ndh-ce-cbJ">
+        <scene sceneID="klH-0T-Z5I">
             <objects>
-                <viewController id="8lH-Iu-yab" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oIx-6S-Y8Y">
+                <tableViewController id="NRn-nz-3bL" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Ch-HC-Olg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="9Dh-nU-wrL"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Resources" image="externalLink" selectedImage="externalLinkFilled" id="Ntx-Wc-xcA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Gn-8o-6I2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="GvO-zo-Qmv">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GvO-zo-Qmv" id="IIH-oQ-Oml">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NRn-nz-3bL" id="Ayw-Ow-QwD"/>
+                            <outlet property="delegate" destination="NRn-nz-3bL" id="TFY-zi-cwC"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Resources" image="externalLink" selectedImage="externalLinkFilled" id="Xlc-DF-z81"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eE4-Xr-pGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="1605"/>
+            <point key="canvasLocation" x="1076" y="1611"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="50R-VJ-Y2m">
@@ -342,7 +366,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="NmX-11-Il9"/>
                         <segue destination="gBK-on-15J" kind="relationship" relationship="viewControllers" id="vyt-lS-MFB"/>
-                        <segue destination="8lH-Iu-yab" kind="relationship" relationship="viewControllers" id="2Sl-3w-b4m"/>
+                        <segue destination="NRn-nz-3bL" kind="relationship" relationship="viewControllers" id="1rO-u2-zat"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5E-ct-TGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -372,6 +396,11 @@
     <resources>
         <image name="checklistSheet" width="37.5" height="37.5"/>
         <image name="checklistSheetFilled" width="37.5" height="37.5"/>
+        <image name="difficultyFive" width="22.5" height="22.5"/>
+        <image name="difficultyFour" width="22.5" height="22.5"/>
+        <image name="difficultyOne" width="22.5" height="22.5"/>
+        <image name="difficultyThree" width="22.5" height="22.5"/>
+        <image name="difficultyTwo" width="22.5" height="22.5"/>
         <image name="externalLink" width="37.5" height="37.5"/>
         <image name="externalLinkFilled" width="37.5" height="37.5"/>
         <image name="home" width="37.5" height="37.5"/>
