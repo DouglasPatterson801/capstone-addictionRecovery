@@ -22,7 +22,7 @@
 		2F9B7131220DD577001CC363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B712F220DD577001CC363 /* LaunchScreen.storyboard */; };
 		2F9B7139220DEFBC001CC363 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B7138220DEFBC001CC363 /* RoundButton.swift */; };
 		2F9B71492215BBC5001CC363 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B71482215BBC5001CC363 /* QuoteController.swift */; };
-		2F9B714D2215CF38001CC363 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B714C2215CF38001CC363 /* CurrentDate.swift */; };
+		2F9B714D2215CF38001CC363 /* StartDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B714C2215CF38001CC363 /* StartDate.swift */; };
 		2F9B715122172DE4001CC363 /* Quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B715022172DE4001CC363 /* Quotes.json */; };
 		2F9B715322172E66001CC363 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B715222172E66001CC363 /* Quote.swift */; };
 		2F9B715522173482001CC363 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B715422173482001CC363 /* HomeViewController.swift */; };
@@ -46,7 +46,7 @@
 		2F9B7132220DD577001CC363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F9B7138220DEFBC001CC363 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		2F9B71482215BBC5001CC363 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
-		2F9B714C2215CF38001CC363 /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
+		2F9B714C2215CF38001CC363 /* StartDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDate.swift; sourceTree = "<group>"; };
 		2F9B715022172DE4001CC363 /* Quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quotes.json; sourceTree = "<group>"; };
 		2F9B715222172E66001CC363 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		2F9B715422173482001CC363 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		2F9B713A22135FF5001CC363 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2F9B714C2215CF38001CC363 /* CurrentDate.swift */,
+				2F9B714C2215CF38001CC363 /* StartDate.swift */,
 				2F8BDAB5221CAAC000243D41 /* Commitment.swift */,
 				2F9B715222172E66001CC363 /* Quote.swift */,
 				2F8BDABC221CC1EA00243D41 /* Stack.swift */,
@@ -244,7 +244,7 @@
 				2F9B715322172E66001CC363 /* Quote.swift in Sources */,
 				2F8BDAB6221CAAC000243D41 /* Commitment.swift in Sources */,
 				2F9B7127220DD575001CC363 /* AppDelegate.swift in Sources */,
-				2F9B714D2215CF38001CC363 /* CurrentDate.swift in Sources */,
+				2F9B714D2215CF38001CC363 /* StartDate.swift in Sources */,
 				2F17E715221F025E0075F804 /* TabBarController.swift in Sources */,
 				2F17E71D22205B630075F804 /* CommitmentListTableViewController.swift in Sources */,
 				2F17E72322205DF90075F804 /* FollowUpCell.swift in Sources */,

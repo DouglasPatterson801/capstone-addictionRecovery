@@ -26,14 +26,14 @@ class CommitmentController {
     }
     
     //==================================================
-    // MARK: - Actions
+    // MARK: - Functions
     //==================================================
     
-    func createCommitent(startDate: Date, reason: String?, commitmentMade: Bool, commitmentKept: Bool?, difficulty: Int16, notes: String?) {
+    func createCommitent(reason: String?, commitmentMade: Bool, commitmentKept: Bool?, difficulty: Int16, currentDate: Date, notes: String?) {
         guard let reason = reason,
             let commitmentKept = commitmentKept,
             let notes = notes else { return }
-        let _ = Commitment(startDate: startDate, reason: reason, commitmentMade: commitmentMade, commitmentKept: commitmentKept, diffictuly: difficulty, notes: notes)
+        let _ = Commitment(reason: reason, commitmentMade: commitmentMade, commitmentKept: commitmentKept, diffictuly: difficulty, currentDate: currentDate, notes: notes)
         saveToPersistentStorage()
     }
     func deleteQuote(commitment: Commitment) {

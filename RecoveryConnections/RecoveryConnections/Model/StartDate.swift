@@ -1,5 +1,5 @@
 //
-//  CurrentDate.swift
+//  StartDate.Swift
 //  RecoveryConnections
 //
 //  Created by Douglas Patterson on 2/14/19.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-struct CurrentDate {
+struct StartDate {
     
     var dateFormatter = DateFormatter()
     var currentDate = Date()
-    
 }
 
 
