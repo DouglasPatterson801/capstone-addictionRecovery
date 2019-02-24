@@ -68,37 +68,8 @@ class MakeCommitmentViewController: UIViewController {
             commitment.notes = notes
             CommitmentController.sharedController.saveToPersistentStorage()
         } else {
-            CommitmentController.sharedController.createCommitent(reason: <#T##String?#>, commitmentMade: <#T##Bool#>, commitmentKept: <#T##Bool?#>, difficulty: <#T##Int16#>, currentDate: <#T##Date#>, notes: <#T##String?#>)
+            CommitmentController.sharedController.createCommitent(reason: reason, commitmentMade: commitmentMade, commitmentKept: commitmentKept, difficulty: difficulty, currentDate: currentDate, notes: notes)
         }
+        self.navigationController?.popViewController(animated: true)
     }
-    
-    /*
-     @IBAction func saveButtonTapped(_ sender: Any) {
-     guard let name = teamNameTextField.text,
-     let player = favoritePlayerTextField.text,
-     let goals = goalsScoredTextField.text,
-     let goalsDouble = Double(goals) else { return }
-     
-     if let team = team {
-     team.name = name
-     team.favoritePlayer = player
-     team.goalsScored = goalsDouble
-     TeamController.sharedController.save()
-     } else {
-     TeamController.sharedController.createTeam(name: name, player: player, goals: goalsDouble)
-     }
-     
-     self.navigationController?.popViewController(animated: true)
-     }
- */
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

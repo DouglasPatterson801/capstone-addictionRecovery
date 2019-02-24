@@ -106,7 +106,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dGc-4c-yBJ">
-                        <barButtonItem key="rightBarButtonItem" title="Today's Commitment" style="done" id="11K-3v-j9J">
+                        <barButtonItem key="rightBarButtonItem" title="Today's Commitment" style="plain" id="11K-3v-j9J">
                             <connections>
                                 <segue destination="nVo-G3-oxv" kind="show" id="Xz0-mr-5O0"/>
                             </connections>
