@@ -31,7 +31,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="e08-6R-EGo"/>
                                 </constraints>
-                                <state key="normal" title="00 Secs. -- 00 Hrs. -- 00 Days">
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="36"/>
+                                <state key="normal" title="00 Days">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -72,6 +73,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="homeFilled" id="IUC-kV-xEn"/>
                     <connections>
                         <outlet property="dailyQuoteLabel" destination="2Rv-Q4-58M" id="DoM-St-GRH"/>
+                        <outlet property="sobrietyCounterButton" destination="5Di-An-HDh" id="LyS-Ht-nO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,7 +108,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dGc-4c-yBJ">
-                        <barButtonItem key="rightBarButtonItem" title="Today's Commitment" style="plain" id="11K-3v-j9J">
+                        <barButtonItem key="rightBarButtonItem" title="Make Today's Commitment" style="plain" id="11K-3v-j9J">
                             <connections>
                                 <segue destination="nVo-G3-oxv" kind="show" id="Xz0-mr-5O0"/>
                             </connections>
@@ -170,6 +172,14 @@
                                     <action selector="commitButtonTapped:" destination="nVo-G3-oxv" eventType="touchUpInside" id="7kG-bc-PLM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-Qf-Ppk">
+                                <rect key="frame" x="278" y="546" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testButtonTapped:" destination="nVo-G3-oxv" eventType="touchUpInside" id="Wr7-jv-gUA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -194,6 +204,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdA-14-wse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3133.5999999999999" y="496.10194902548727"/>
+        </scene>
+        <!--Sobriety Date View Controller-->
+        <scene sceneID="lxi-BW-N2S">
+            <objects>
+                <viewController id="SZF-dg-qUY" customClass="SobrietyDateViewController" customModule="RecoveryConnections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uop-pC-X9D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TCE-BD-NQ0">
+                                <rect key="frame" x="0.0" y="137" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="572800414.79324102">
+                                    <!--2019-02-25 15:13:34 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="SZF-dg-qUY" eventType="valueChanged" id="NMw-N9-jid"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzF-Cs-587">
+                                <rect key="frame" x="130" y="383" width="115" height="30"/>
+                                <state key="normal" title="Set Sobriey Date"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="SZF-dg-qUY" eventType="touchUpInside" id="gel-fL-lue"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dcn-eV-HCN" firstAttribute="trailing" secondItem="RzF-Cs-587" secondAttribute="trailing" constant="130" id="Fid-u7-cx5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dcn-eV-HCN"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="TCE-BD-NQ0" id="m6Q-Ci-1dS"/>
+                        <outlet property="submitButton" destination="RzF-Cs-587" id="d6N-3A-ndm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7O-21-raZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020" y="134"/>
         </scene>
         <!--Commitment List Table View Controller-->
         <scene sceneID="MUm-zh-zob">

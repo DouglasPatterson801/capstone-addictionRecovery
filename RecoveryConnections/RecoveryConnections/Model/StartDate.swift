@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import CoreData
 
-struct StartDate {
-    
-    var dateFormatter = DateFormatter()
-    var currentDate = Date()
+extension StartDate {
+    convenience init?(sobrietyDate: Date, context: NSManagedObjectContext = Stack.context) {
+        
+        self.init(context: context)
+        self.sobrietyDate = sobrietyDate
+    }
 }
-
 

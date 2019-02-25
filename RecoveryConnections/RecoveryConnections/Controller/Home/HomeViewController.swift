@@ -14,11 +14,21 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     //==================================================
     let backGroundImageView = UIImageView()
+    var startDate: StartDate? {
+        didSet {
+            guard let startDate = startDate,
+            let sobrietyDate = startDate.sobrietyDate else {
+                sobrietyCounterButton.setTitle("Set Sobriety Date", for: .normal)
+                return }
+            sobrietyCounterButton.setTitle("\(sobrietyDate)", for: .normal)
+        }
+    }
     let dailyQuote: Quote? = {
         QuoteController.sharedController.getDailyQuote()
     }()
     
     //Outlets:
+    @IBOutlet weak var sobrietyCounterButton: RoundButton!
     @IBOutlet weak var dailyQuoteLabel: UILabel!
     
     
@@ -43,7 +53,9 @@ class HomeViewController: UIViewController {
         self.view.addSubview(backGroundImageView)
         view.sendSubviewToBack(backGroundImageView)
     }
-    
+    func setSobrietyDate() {
+        
+    }
     func populateDailyQuote() {
         if let quote = dailyQuote {
             dailyQuoteLabel.text = "\(quote.quoteText)"
