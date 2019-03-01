@@ -11,7 +11,7 @@ import CoreData
 
 enum Stack {
     static let container: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Commitment")
+        let container = NSPersistentContainer(name: "DataModels")
         container.loadPersistentStores(){ (storeDescription, error) in
             print(storeDescription)
             if let error = error {

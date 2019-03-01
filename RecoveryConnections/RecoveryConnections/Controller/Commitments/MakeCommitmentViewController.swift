@@ -61,17 +61,10 @@ class MakeCommitmentViewController: UIViewController {
         if let commitment = commitment {
             commitment.currentDate = currentDate
             commitment.commitmentMade = commitmentMade
-            
-            
-            CommitmentController.sharedController.saveToPersistentStorage()
+            ModelController.sharedController.saveToPersistentStorage()
         } else {
-            CommitmentController.sharedController.createCommitent(reason: reason, commitmentMade: commitmentMade, commitmentKept: nil, difficulty: nil, currentDate: currentDate, notes: nil)
+            ModelController.sharedController.createCommitment(reason: reason, commitmentMade: commitmentMade, commitmentKept: nil, difficulty: nil, currentDate: currentDate, notes: nil)
         }
         self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func testButtonTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
 }

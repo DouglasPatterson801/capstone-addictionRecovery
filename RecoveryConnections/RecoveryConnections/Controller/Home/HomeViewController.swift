@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
     
@@ -14,15 +15,6 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     //==================================================
     let backGroundImageView = UIImageView()
-    var startDate: StartDate? {
-        didSet {
-            guard let startDate = startDate,
-            let sobrietyDate = startDate.sobrietyDate else {
-                sobrietyCounterButton.setTitle("Set Sobriety Date", for: .normal)
-                return }
-            sobrietyCounterButton.setTitle("\(sobrietyDate)", for: .normal)
-        }
-    }
     let dailyQuote: Quote? = {
         QuoteController.sharedController.getDailyQuote()
     }()
@@ -31,21 +23,26 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sobrietyCounterButton: RoundButton!
     @IBOutlet weak var dailyQuoteLabel: UILabel!
     
-    
     //==================================================
-    // MARK: - Actions
+    // MARK: - View Lifecycle
     //==================================================
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         populateDailyQuote()
         getBackGroundImage()
     }
+    override func viewWillAppear(_ animated: Bool) {
+               setSobrietyCounter()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.backGroundImageView.frame = self.view.bounds
     }
     
+    //==================================================
+    // MARK: - Functions
+    //==================================================
     func getBackGroundImage() {
         let image = UIImage(named: "riverImage3")
         self.backGroundImageView.contentMode = .scaleAspectFill
@@ -53,8 +50,13 @@ class HomeViewController: UIViewController {
         self.view.addSubview(backGroundImageView)
         view.sendSubviewToBack(backGroundImageView)
     }
-    func setSobrietyDate() {
-        
+    func setSobrietyCounter() {
+        if SobrietyCounterController.sharedController.startDateArray == [] {
+            sobrietyCounterButton.setTitle("Tap to set sobriety date", for: .normal)
+        } else {
+            let daysSober =  SobrietyCounterController.sharedController.getNumberOfDaysSober() //else { return }
+            sobrietyCounterButton.setTitle("\(daysSober)", for: .normal)
+        }
     }
     func populateDailyQuote() {
         if let quote = dailyQuote {
@@ -62,15 +64,19 @@ class HomeViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //==================================================
+    // MARK: - Actions
+    //==================================================
+    @IBAction func sobrietyCounterButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "setDateSegue", sender: Any?.self)
     }
-    */
-
+    
+    //==================================================
+    // MARK: - Navigation
+    //==================================================
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "setDateSegue" {
+            var sobrietyDateViewController = segue.destination as! SobrietyDateViewController
+        }
+    }
 }

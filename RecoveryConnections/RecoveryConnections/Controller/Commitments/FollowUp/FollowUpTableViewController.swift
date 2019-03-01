@@ -15,14 +15,7 @@ class FollowUpTableViewController: UITableViewController {
     //==================================================
     
     //Outlets
-    @IBOutlet weak var reasonLabel: UILabel!
-    @IBOutlet weak var motivationalImage: UIImageView!
-    @IBOutlet weak var commitmentKeptControl: UISegmentedControl!
-    @IBOutlet weak var difficultyOne: UIButton!
-    @IBOutlet weak var difficultyTwo: UIButton!
-    @IBOutlet weak var difficultyThree: UIButton!
-    @IBOutlet weak var difficultyFour: UIButton!
-    @IBOutlet weak var difficultyFive: UIButton!
+
     
 
     override func viewDidLoad() {

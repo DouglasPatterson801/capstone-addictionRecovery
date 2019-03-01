@@ -7,19 +7,37 @@
 //
 
 import UIKit
+import CoreData
 
 class SobrietyDateViewController: UIViewController {
-
-    var startDate = StartDate()
+    //==================================================
+    // MARK: - Properties
+    //==================================================
     
+    var currentDate = Date()
+    var startDate: StartDate?
+    //Outlets
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        datePicker.maximumDate = currentDate
     }
+    //==================================================
+    // MARK: - Functions
+    //==================================================
+    func getStartDate() {
+        let startDateArray = SobrietyCounterController.sharedController.startDateArray
+        if startDateArray == [] {
+            ModelController.sharedController.newSobrietyDate(sobrietyDate: datePicker.date)
+        } else {
+            guard let startDate = startDate else { return }
+            ModelController.sharedController.deleteSobrietyDate(startDate: startDate)
+            ModelController.sharedController.newSobrietyDate(sobrietyDate: datePicker.date)
+        }
+    }
+    
     
     //==================================================
     // MARK: - Actions
@@ -27,18 +45,11 @@ class SobrietyDateViewController: UIViewController {
     @IBAction func datePickerChanged(_ sender: Any) {
     }
     @IBAction func submitButtonTapped(_ sender: Any) {
-      startDate.sobrietyDate = datePicker.date
+       getStartDate()
+       print(SobrietyCounterController.sharedController.startDateArray)
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    // MARK: - Navigation
-
-   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
     }
-//    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-//        <#code#>
-//    }
-
 }

@@ -9,12 +9,19 @@
 import Foundation
 import CoreData
 
-class SobrietyCounter {
-    static let sharedController = SobrietyCounter()
-    let formattedDate = DateFormatter()
+class SobrietyCounterController {
+    //==================================================
+    // MARK: - Properties
+    //==================================================
+    static let sharedController = SobrietyCounterController()
+    let dateFormatter = DateFormatter()
+    var startDate: StartDate?
     let currentDate = Date()
+    var calendar = Calendar.current
     
-    var startDates: [StartDate] {
+    
+    
+    var startDateArray: [StartDate] {
         let request: NSFetchRequest<StartDate> = StartDate.fetchRequest()
         do {
             return try Stack.context.fetch(request)
@@ -22,18 +29,20 @@ class SobrietyCounter {
             return []
         }
     }
+
+//    func daysSober(from: Date) -> Int? {
+//        guard let sobrietyDate = startDate?.sobrietyDate else { return nil }
+//        let daysSober = Calendar.current.dateComponents([.day], from: sobrietyDate, to: currentDate).day ?? 0
+//        return daysSober
+//    }
     
-    
-    func getNumberOfDaysSober() -> DateComponents? {
-        
-        //if core data has date, calculate difference in days
-        // - Fetch date from CoreData
-        // - do -> if date exists, find difference in days
-        // - catch -> print error/whatever
-        guard let startDate = startDates.first,
-            let sobrietyDate =  startDate.sobrietyDate else { return nil }
-            let differenceInDays = Calendar.current.dateComponents([.day], from: sobrietyDate, to: currentDate)
-        return differenceInDays
-        
+    func getNumberOfDaysSober() {
+        guard let sobrietyDate = startDate?.sobrietyDate else { return }
+        let differenceInDays = Calendar.current.dateComponents([.day], from: sobrietyDate, to: currentDate)
+        dateFormatter.string(from: differenceInDays)
+
     }
 }
+
+
+

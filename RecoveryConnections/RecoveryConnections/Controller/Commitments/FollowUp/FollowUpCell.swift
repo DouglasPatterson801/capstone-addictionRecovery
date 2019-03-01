@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 class FollowUpTableViewCell: UITableViewCell {
     //==================================================
     // MARK: - Properties
     //==================================================
-
+    var commitmentArray: [Commitment] {
+        let request: NSFetchRequest<Commitment> = Commitment.fetchRequest()
+        do {
+            return try Stack.context.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    var commitment: Commitment?
     //Outlets
-    
+    @IBOutlet weak var reasonLabel: UILabel!
+    @IBOutlet weak var motivationalImage: UIImageView!
+    @IBOutlet weak var commitmentKeptControl: UISegmentedControl!
+    @IBOutlet weak var difficultyOne: UIButton!
+    @IBOutlet weak var difficultyTwo: UIButton!
+    @IBOutlet weak var difficultyThree: UIButton!
+    @IBOutlet weak var difficultyFour: UIButton!
+    @IBOutlet weak var difficultyFive: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
