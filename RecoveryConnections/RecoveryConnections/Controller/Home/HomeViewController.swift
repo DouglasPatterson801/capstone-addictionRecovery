@@ -20,7 +20,9 @@ class HomeViewController: UIViewController {
     }()
     
     //Outlets:
+    @IBOutlet weak var todayMarksLabel: UILabel!
     @IBOutlet weak var sobrietyCounterButton: RoundButton!
+    @IBOutlet weak var daysOfSobrietyLabel: UILabel!
     @IBOutlet weak var dailyQuoteLabel: UILabel!
     
     //==================================================
@@ -30,9 +32,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         populateDailyQuote()
         getBackGroundImage()
+        sobrietyCounterButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        sobrietyCounterButton.titleLabel?.insetsLayoutMarginsFromSafeArea = true
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-               setSobrietyCounter()
+       setSobrietyCounter()
     }
     
     override func viewDidLayoutSubviews() {
@@ -50,14 +55,21 @@ class HomeViewController: UIViewController {
         self.view.addSubview(backGroundImageView)
         view.sendSubviewToBack(backGroundImageView)
     }
+    
     func setSobrietyCounter() {
-        if SobrietyCounterController.sharedController.startDateArray == [] {
-            sobrietyCounterButton.setTitle("Tap to set sobriety date", for: .normal)
+        if SobrietyCounterController.sharedController.startDateArray.isEmpty == true {
+            todayMarksLabel.text = "Use this counter to measure your success!"
+            sobrietyCounterButton.setTitle("Tap Here", for: .normal)
+            daysOfSobrietyLabel.text = ""
+            
         } else {
-            let daysSober =  SobrietyCounterController.sharedController.getNumberOfDaysSober() //else { return }
+           guard let daysSober = SobrietyCounterController.sharedController.getNumberOfDaysSober() else { return }
+            todayMarksLabel.text = "Today marks day"
             sobrietyCounterButton.setTitle("\(daysSober)", for: .normal)
+            daysOfSobrietyLabel.text = "of sobriety!"
         }
     }
+    
     func populateDailyQuote() {
         if let quote = dailyQuote {
             dailyQuoteLabel.text = "\(quote.quoteText)"
@@ -79,4 +91,5 @@ class HomeViewController: UIViewController {
             var sobrietyDateViewController = segue.destination as! SobrietyDateViewController
         }
     }
+    
 }

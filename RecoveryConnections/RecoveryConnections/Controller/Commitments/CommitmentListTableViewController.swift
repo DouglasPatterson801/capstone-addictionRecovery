@@ -11,14 +11,7 @@ import CoreData
 
 class CommitmentListTableViewController: UITableViewController {
     
-    var commitmentArray: [Commitment] {
-        let request: NSFetchRequest<Commitment> = Commitment.fetchRequest()
-        do {
-            return try Stack.context.fetch(request)
-        } catch {
-            return []
-        }
-    }
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +30,13 @@ class CommitmentListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return commitmentArray.count
+        return ModelController.sharedController.commitmentArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commitmentCell", for: indexPath) as! CommitmentListTableViewCell
-        let commitment = commitmentArray[indexPath.row]
+        let commitment = ModelController.sharedController.commitmentArray[indexPath.row]
         cell.update(with: commitment)
         return cell
     }

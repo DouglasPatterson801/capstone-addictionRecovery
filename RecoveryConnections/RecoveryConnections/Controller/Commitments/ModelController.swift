@@ -24,6 +24,7 @@ class ModelController {
             return []
         }
     }
+    
     var startDateArray: [StartDate] {
         let request: NSFetchRequest<StartDate> = StartDate.fetchRequest()
         do {
@@ -33,27 +34,32 @@ class ModelController {
         }
     }
     
+    
     //==================================================
     // MARK: - Functions
     //==================================================
     
-    func createCommitment(reason: String?, commitmentMade: Bool, commitmentKept: Bool?, difficulty: Int16?, currentDate: Date, notes: String?) {
+    func createCommitment(reason: String?, commitmentMade: Bool, commitmentKept: Bool?, difficulty: Int16?, currentDate: Date, notes: String?, motivationalImage: NSData?) {
         guard let reason = reason else { return }
-        let _ = Commitment(reason: reason, commitmentMade: commitmentMade, commitmentKept: commitmentKept, diffictuly: difficulty, currentDate: currentDate, notes: notes)
+        let _ = Commitment(reason: reason, commitmentMade: commitmentMade, commitmentKept: commitmentKept, diffictuly: difficulty, currentDate: currentDate, notes: notes, motivationalImage: motivationalImage)
         saveToPersistentStorage()
     }
+    
     func deleteQuote(commitment: Commitment) {
         Stack.context.delete(commitment)
         saveToPersistentStorage()
     }
+    
     func deleteSobrietyDate(startDate: StartDate) {
         Stack.context.delete(startDate)
         saveToPersistentStorage()
     }
+    
     func newSobrietyDate(sobrietyDate: Date) {
         let _ = StartDate(sobrietyDate: sobrietyDate)
         saveToPersistentStorage()
     }
+    
     func saveToPersistentStorage() {
         do {
             try Stack.context.save()
@@ -61,4 +67,5 @@ class ModelController {
             print("Error. Could not Commitment to CoreData.")
         }
     }
+    
 }

@@ -54,9 +54,8 @@ class QuoteController {
             print("Unable to return quote text")
             return nil
         }
-        
-        
     }
+    
 }
 
 

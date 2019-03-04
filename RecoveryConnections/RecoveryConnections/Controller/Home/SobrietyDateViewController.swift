@@ -18,38 +18,48 @@ class SobrietyDateViewController: UIViewController {
     var startDate: StartDate?
     //Outlets
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var submitButton: RoundButton!
+    @IBOutlet weak var cancelButton: RoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.maximumDate = currentDate
     }
+    
     //==================================================
     // MARK: - Functions
     //==================================================
+    
     func getStartDate() {
         let startDateArray = SobrietyCounterController.sharedController.startDateArray
         if startDateArray == [] {
             ModelController.sharedController.newSobrietyDate(sobrietyDate: datePicker.date)
         } else {
-            guard let startDate = startDate else { return }
-            ModelController.sharedController.deleteSobrietyDate(startDate: startDate)
+            safelyRemoveAllItemsFromStartDateArray()
             ModelController.sharedController.newSobrietyDate(sobrietyDate: datePicker.date)
         }
     }
     
+    func safelyRemoveAllItemsFromStartDateArray() {
+        for startDate in ModelController.sharedController.startDateArray {
+            ModelController.sharedController.deleteSobrietyDate(startDate: startDate)
+        }
+    }
     
     //==================================================
     // MARK: - Actions
     //==================================================
     @IBAction func datePickerChanged(_ sender: Any) {
     }
+    
     @IBAction func submitButtonTapped(_ sender: Any) {
        getStartDate()
-       print(SobrietyCounterController.sharedController.startDateArray)
+//       print(SobrietyCounterController.sharedController.startDateArray)
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
     }
+    
 }

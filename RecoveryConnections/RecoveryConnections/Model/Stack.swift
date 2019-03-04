@@ -18,7 +18,6 @@ enum Stack {
                 fatalError("Unresolved error \(error)")
             }
         }
-        
         return container
     }()
     
