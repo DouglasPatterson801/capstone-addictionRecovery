@@ -1,30 +1,32 @@
 //
-//  FollowUpTableViewCell.swift
+//  FollowUpViewController.swift
 //  RecoveryConnections
 //
-//  Created by Douglas Patterson on 2/22/19.
+//  Created by Douglas Patterson on 3/6/19.
 //  Copyright © 2019 Douglas Patterson. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
-class FollowUpTableViewCell: UITableViewCell {
+class FollowUpViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        motivationalImage.image = setImage()
+        reasonLabel.text = setReasonLabelText()
+    }
+    
     //==================================================
     // MARK: - Properties
     //==================================================
+
+    var commitment: Commitment?
+        
     
-    
-    var commitment: Commitment? {
-        didSet {
-            guard  let commitment = commitment else { return }
-            reasonLabel.text = setReasonLabelText()
-            motivationalImage.image = setImage()
-        }
-    }
     
     var difficulty: Int16 = 0
-//    var followUpTableViewController = FollowUpTableViewController()
+    //    var followUpTableViewController = FollowUpTableViewController()
     //Outlets
     
     @IBOutlet weak var reasonLabel: UILabel!
@@ -37,7 +39,7 @@ class FollowUpTableViewCell: UITableViewCell {
     @IBOutlet weak var difficultyFiveButton: UIButton!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var notesTextView: UITextView!
-
+    
     //==================================================
     // MARK: - Functions
     //==================================================
@@ -45,10 +47,10 @@ class FollowUpTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//    }
     
     func setDifficulty() -> Int16? {
         return difficulty
@@ -131,7 +133,7 @@ class FollowUpTableViewCell: UITableViewCell {
         difficultyFourButton.alpha = 0.2
         difficultyFiveButton.alpha = 1.0
     }
-
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let commitment = commitment,
             let difficulty = setDifficulty() else { return }
@@ -141,4 +143,6 @@ class FollowUpTableViewCell: UITableViewCell {
     }
     
     
+    
+
 }

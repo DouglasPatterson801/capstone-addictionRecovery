@@ -14,14 +14,6 @@ class CommitmentListTableViewCell: UITableViewCell {
     //==================================================
     // MARK: - Properties
     //==================================================
-    var commitmentArray: [Commitment] {
-        let request: NSFetchRequest<Commitment> = Commitment.fetchRequest()
-        do {
-            return try Stack.context.fetch(request)
-        } catch {
-            return []
-        }
-    }
     var commitment: Commitment?
     var todaysDate = Date()
     var dateFormatter = DateFormatter()
@@ -37,14 +29,12 @@ class CommitmentListTableViewCell: UITableViewCell {
     //==================================================
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
+    
     func checkForCompletion() -> UIImage? {
         guard let commitment = commitment else { return nil }
         if commitment.commitmentMade == true && commitment.commitmentKept == false {
@@ -57,7 +47,11 @@ class CommitmentListTableViewCell: UITableViewCell {
             return nil
         }
     }
-    // Functions
+    
+    //==================================================
+    // MARK: - Functions
+    //==================================================
+    
     func checkForDifficulty() -> UIImage? {
         guard let commitment = commitment else { return nil }
         if commitment.difficulty == 1 {
@@ -74,6 +68,7 @@ class CommitmentListTableViewCell: UITableViewCell {
             return nil
         }
     }
+    
     func checkForNotes() -> UIImage? {
         guard let commitment = commitment else { return nil }
         if let _ = commitment.notes {
@@ -81,12 +76,12 @@ class CommitmentListTableViewCell: UITableViewCell {
         } else { return nil }
         
     }
+    
     func formatCurrentDate() -> String? {
         guard let commitmentDate = commitment?.currentDate else { return nil }
         dateFormatter.dateFormat = "EEEE, MMMM d"
         return dateFormatter.string(from: commitmentDate)
     }
-
     
     func update(with commitment: Commitment) {
         self.commitment = commitment

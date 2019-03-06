@@ -15,26 +15,9 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
     //==================================================
     let commitmentMade = false
     var difficultyRating: Int16? = 0
-
-    var commitmentArray: [Commitment] {
-        let request: NSFetchRequest<Commitment> = Commitment.fetchRequest()
-        do {
-            return try Stack.context.fetch(request)
-        } catch {
-            return []
-        }
-    }
-    var commitment: Commitment? {
-        didSet {
-            guard let commitment = commitment else { return }
-            let currentDate = Date()
-            let reason = reasonTextField.text
-            let commitmentMade = self.commitmentMade
-            let commitmentKept: Bool? = nil
-            let difficulty = difficultyRating
-            let notes: String? = nil
-        }
-    }
+    
+    var commitmentArray = ModelController.sharedController.commitmentArray
+    var commitment: Commitment? 
     
     //Outlets
     @IBOutlet weak var reasonTextField: UITextField!
@@ -45,21 +28,25 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
     //==================================================
     // MARK: - View LifeCycle
     //==================================================
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         updateSetImageButtonText()
     }
+    
     //==================================================
     // MARK: - Functions
     //==================================================
+    
     func updateSetImageButtonText() {
         if motivationalImage.image != UIImage(named: "noImageSelected"){
             setImageButton.setTitle("Change Image", for: .normal)
         }
     }
-  
+    
     func checkForUploadedImage() -> UIImage? {
         if motivationalImage.image == UIImage(named: "noImageSelected") {
             return nil
@@ -81,22 +68,22 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
         
     }
     
-    
     @IBAction func commitButtonTapped(_ sender: Any) {
         guard let reason = reasonTextField.text,
             let unwrappedImage = checkForUploadedImage() else {
-            print("could not safely unwrap either reasonTextField of motivationalImage")
-        return
-    }
-        let motivationalImage = unwrappedImage.pngData() as NSData?
-    let commitmentMade = true
-    let currentDate = Date()
-    if let commitment = commitment {
-        commitment.currentDate = currentDate
-        commitment.commitmentMade = commitmentMade
-        ModelController.sharedController.saveToPersistentStorage()
-    } else {
-        ModelController.sharedController.createCommitment(reason: reason, commitmentMade: commitmentMade, commitmentKept: nil, difficulty: nil, currentDate: currentDate, notes: nil, motivationalImage: motivationalImage)
+                print("could not safely unwrap either reasonTextField of motivationalImage")
+                return
+        }
+        
+        let motivationalImage = unwrappedImage.jpegData(compressionQuality: 0.5)
+        let commitmentMade = true
+        let currentDate = Date()
+        if let commitment = commitment {
+            commitment.currentDate = currentDate
+            commitment.commitmentMade = commitmentMade
+            ModelController.sharedController.saveToPersistentStorage()
+        } else {
+            ModelController.sharedController.createCommitment(reason: reason, commitmentMade: commitmentMade, commitmentKept: nil, difficulty: nil, currentDate: currentDate, notes: nil, motivationalImage: motivationalImage)
         }
         self.navigationController?.popViewController(animated: true)
     }

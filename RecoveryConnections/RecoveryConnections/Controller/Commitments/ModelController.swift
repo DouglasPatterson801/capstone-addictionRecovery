@@ -39,7 +39,7 @@ class ModelController {
     // MARK: - Functions
     //==================================================
     
-    func createCommitment(reason: String?, commitmentMade: Bool, commitmentKept: Bool?, difficulty: Int16?, currentDate: Date, notes: String?, motivationalImage: NSData?) {
+    func createCommitment(reason: String?, commitmentMade: Bool, commitmentKept: Bool?, difficulty: Int16?, currentDate: Date, notes: String?, motivationalImage: Data?) {
         guard let reason = reason else { return }
         let _ = Commitment(reason: reason, commitmentMade: commitmentMade, commitmentKept: commitmentKept, diffictuly: difficulty, currentDate: currentDate, notes: notes, motivationalImage: motivationalImage)
         saveToPersistentStorage()
