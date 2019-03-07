@@ -12,7 +12,7 @@ class FollowUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        difficultyLabel.text = ""
         motivationalImage.image = setImage()
         reasonLabel.text = setReasonLabelText()
     }
@@ -22,8 +22,6 @@ class FollowUpViewController: UIViewController {
     //==================================================
 
     var commitment: Commitment?
-        
-    
     
     var difficulty: Int16 = 0
     //    var followUpTableViewController = FollowUpTableViewController()
@@ -59,9 +57,8 @@ class FollowUpViewController: UIViewController {
     func setReasonLabelText() -> String? {
         guard let reason = commitment?.reason else {
             return "Today I have commited to stay sober!" }
-        return  "I have commited to stay sober because \(reason)"
+            return  "I have commited to stay sober because \(reason)"
     }
-    
     func setImage() -> UIImage? {
         guard let unwrappedImageDate = commitment?.motivationalImage,
             let image = UIImage(data: unwrappedImageDate) else { return nil }

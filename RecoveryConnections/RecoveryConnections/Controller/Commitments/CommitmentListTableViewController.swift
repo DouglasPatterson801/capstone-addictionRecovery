@@ -34,7 +34,7 @@ class CommitmentListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commitmentCell", for: indexPath) as! CommitmentListTableViewCell
-        let commitment = ModelController.sharedController.commitmentArray[indexPath.row]
+        let commitment = ModelController.sharedController.commitmentArray.reversed()[indexPath.row]
         cell.update(with: commitment)
         return cell
     }
