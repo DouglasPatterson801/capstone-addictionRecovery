@@ -82,11 +82,13 @@ class CommitmentListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "followUpSegue" {
             //get detail view controller, selected row
-            guard let followUpViewController = segue.destination as? FollowUpTableViewController,
-                let selectedRow = tableView.indexPathForSelectedRow?.row else { return }
+            guard let followUpViewController = segue.destination as? FollowUpViewController,
+                let selectedRow = tableView.indexPathForSelectedRow?.row else {
+                    print("kicked from prepare for segue")
+                    return }
             
             //we have the data
-            let commitment = ModelController.sharedController.commitmentArray[selectedRow]
+            let commitment = ModelController.sharedController.commitmentArray.reversed()[selectedRow]
             
             //give it to the destination
             followUpViewController.commitment = commitment

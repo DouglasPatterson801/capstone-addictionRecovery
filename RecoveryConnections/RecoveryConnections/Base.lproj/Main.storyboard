@@ -165,7 +165,7 @@
                                     <outlet property="dateLabel" destination="nmD-nd-GK2" id="XQ9-qe-b22"/>
                                     <outlet property="difficultyImageView" destination="e4c-gp-IFi" id="bMp-Dj-7iq"/>
                                     <outlet property="notesImageView" destination="3m4-c8-f3S" id="BI0-ba-3fd"/>
-                                    <segue destination="FHF-0f-MPn" kind="show" id="kSy-kb-RcA"/>
+                                    <segue destination="FHF-0f-MPn" kind="show" identifier="followUpSegue" id="kSy-kb-RcA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -404,11 +404,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Today I have commited to living sober." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n82-nQ-02G">
-                                                <rect key="frame" x="0.0" y="15" width="414" height="55"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="414" id="Vbe-Yn-2ac"/>
-                                                    <constraint firstAttribute="height" constant="55" id="jMO-08-ubo"/>
-                                                </constraints>
+                                                <rect key="frame" x="15" y="15" width="384" height="55"/>
                                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -518,9 +514,11 @@
                                             <constraint firstItem="cph-Dz-QVr" firstAttribute="top" secondItem="u0Z-jZ-HMY" secondAttribute="bottom" constant="40" id="8yi-j3-m0V"/>
                                             <constraint firstItem="cph-Dz-QVr" firstAttribute="centerX" secondItem="jzI-ZT-WPz" secondAttribute="centerX" id="CKI-3U-mhu"/>
                                             <constraint firstItem="wq9-iH-bXR" firstAttribute="centerX" secondItem="jzI-ZT-WPz" secondAttribute="centerX" id="HTp-Gb-12b"/>
+                                            <constraint firstAttribute="trailing" secondItem="n82-nQ-02G" secondAttribute="trailing" constant="15" id="HUO-AN-a1E"/>
                                             <constraint firstItem="u0Z-jZ-HMY" firstAttribute="top" secondItem="wq9-iH-bXR" secondAttribute="bottom" constant="10" id="K2N-0T-3IA"/>
                                             <constraint firstItem="hWx-da-CjK" firstAttribute="top" secondItem="MIV-sJ-vXD" secondAttribute="bottom" constant="20" id="P7Q-jk-55h"/>
                                             <constraint firstItem="MIV-sJ-vXD" firstAttribute="centerX" secondItem="jzI-ZT-WPz" secondAttribute="centerX" id="WQJ-bE-4G6"/>
+                                            <constraint firstItem="n82-nQ-02G" firstAttribute="leading" secondItem="jzI-ZT-WPz" secondAttribute="leading" constant="15" id="Znh-Ms-YFO"/>
                                             <constraint firstItem="MhS-5g-xAL" firstAttribute="top" secondItem="hWx-da-CjK" secondAttribute="bottom" constant="10" id="b58-Ba-IVq"/>
                                             <constraint firstItem="wq9-iH-bXR" firstAttribute="top" secondItem="wrY-KJ-uep" secondAttribute="bottom" constant="15" id="ew0-wr-z88"/>
                                             <constraint firstItem="MIV-sJ-vXD" firstAttribute="top" secondItem="n82-nQ-02G" secondAttribute="bottom" constant="20" id="kDb-X0-Hs6"/>
@@ -576,7 +574,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhF-SO-u0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4039.130434782609" y="1345.9239130434785"/>
+            <point key="canvasLocation" x="3133" y="1374"/>
         </scene>
         <!--Follow Up-->
         <scene sceneID="MUm-zh-zob">
@@ -936,7 +934,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wn0-TN-e3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173.913043478261" y="1630.4347826086957"/>
+            <point key="canvasLocation" x="1075" y="1718"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="50R-VJ-Y2m">
