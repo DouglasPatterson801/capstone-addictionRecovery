@@ -57,7 +57,7 @@ class HomeViewController: UIViewController {
     }
     
     func setSobrietyCounter() {
-        if SobrietyCounterController.sharedController.startDateArray.isEmpty == true {
+        if ModelController.sharedController.startDateArray.isEmpty == true {
             todayMarksLabel.text = "Use this counter to measure your success!"
             sobrietyCounterButton.setTitle("Tap Here", for: .normal)
             daysOfSobrietyLabel.text = ""

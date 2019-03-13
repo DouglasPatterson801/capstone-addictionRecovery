@@ -34,7 +34,6 @@ class ModelController {
         }
     }
     
-    
     //==================================================
     // MARK: - Functions
     //==================================================
@@ -45,7 +44,7 @@ class ModelController {
         saveToPersistentStorage()
     }
     
-    func deleteQuote(commitment: Commitment) {
+    func deleteCommitment(commitment: Commitment) {
         Stack.context.delete(commitment)
         saveToPersistentStorage()
     }

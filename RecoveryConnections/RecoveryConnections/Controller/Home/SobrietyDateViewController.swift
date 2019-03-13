@@ -31,7 +31,7 @@ class SobrietyDateViewController: UIViewController {
     //==================================================
     
     func getStartDate() {
-        let startDateArray = SobrietyCounterController.sharedController.startDateArray
+        let startDateArray = ModelController.sharedController.startDateArray
         if startDateArray == [] {
             ModelController.sharedController.newSobrietyDate(sobrietyDate: datePicker.date)
         } else {

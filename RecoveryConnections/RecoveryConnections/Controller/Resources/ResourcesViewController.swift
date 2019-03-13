@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ResourcesViewController: UIViewController {
 
@@ -16,15 +17,31 @@ class ResourcesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //==================================================
+    // MARK: - Properties
+    //==================================================
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    let twelveStepsOrg = URL(string: "http://www.12step.org/")
+    
+    
+    
+    //==================================================
+    // MARK: - Functions
+    //==================================================
+    
+    func goToWebsite(url: URL?) {
+        guard let url = url else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true)
     }
-    */
+    
+    //==================================================
+    // MARK: - Actions
+    //==================================================
 
+    @IBAction func twelveStepsButtonTapped(_ sender: Any) {
+        goToWebsite(url: twelveStepsOrg)
+    }
+    
+    
 }

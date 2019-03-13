@@ -19,15 +19,6 @@ class SobrietyCounterController {
     var startDate: StartDate?
     let currentDate = Date()
     var calendar = Calendar.current
-    
-    var startDateArray: [StartDate] {
-        let request: NSFetchRequest<StartDate> = StartDate.fetchRequest()
-        do {
-            return try Stack.context.fetch(request)
-        } catch {
-            return []
-        }
-    }
 
     func getNumberOfDaysSober() -> Int? {
         startDate = ModelController.sharedController.startDateArray.last

@@ -41,7 +41,7 @@ class CommitmentListTableViewCell: UITableViewCell {
             guard let starImage = UIImage(named: "star") else { return nil }
             return starImage
         } else if commitment.commitmentMade == true && commitment.commitmentKept == true {
-            guard let filledStarImage = UIImage(named: "filledStar") else { return nil }
+            guard let filledStarImage = UIImage(named: "starFilled") else { return nil }
             return filledStarImage
         } else {
             return nil
@@ -74,7 +74,6 @@ class CommitmentListTableViewCell: UITableViewCell {
         if let _ = commitment.notes {
             return UIImage(named: "journal")
         } else { return nil }
-        
     }
     
     func formatCurrentDate() -> String? {

@@ -10,14 +10,6 @@ import UIKit
 
 class FollowUpViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        difficultyLabel.text = ""
-        motivationalImage.image = setImage()
-        reasonLabel.text = setReasonLabelText()
-        setDifficulty()
-        updateDifficultyButtons()
-    }
     
     //==================================================
     // MARK: - Properties
@@ -25,12 +17,15 @@ class FollowUpViewController: UIViewController {
     
     var commitment: Commitment?
     var difficulty: Int16?
+    let dateFormatter = DateFormatter()
+    let alertControler = UIAlertController()
     
     //Outlets
     
     @IBOutlet weak var reasonLabel: UILabel!
     @IBOutlet weak var motivationalImage: UIImageView!
-    @IBOutlet weak var commitmentKeptControl: UISegmentedControl!
+    @IBOutlet weak var commitmentKeptSwitch: UISwitch!
+    @IBOutlet weak var commitmentKeptLabel: UILabel!
     @IBOutlet weak var difficultyOneButton: UIButton!
     @IBOutlet weak var difficultyTwoButton: UIButton!
     @IBOutlet weak var difficultyThreeButton: UIButton!
@@ -40,16 +35,23 @@ class FollowUpViewController: UIViewController {
     @IBOutlet weak var notesTextView: UITextView!
     
     //==================================================
-    // MARK: - Functions
+    // MARK: - View LifeCycle
     //==================================================
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = formatCurrentDate()
+        difficultyLabel.text = ""
+        motivationalImage.image = setImage()
+        reasonLabel.text = setReasonLabelText()
+        setDifficulty()
+        updateDifficultyButtons()
+        notesTextView.text = commitment?.notes
     }
     
-    //    override func setSelected(_ selected: Bool, animated: Bool) {
-    //        super.setSelected(selected, animated: animated)
-    //    }
+    //==================================================
+    // MARK: - Functions
+    //==================================================
     
     func setDifficulty() {
         guard let commitmentDifficulty = commitment?.difficulty else { return }
@@ -57,7 +59,6 @@ class FollowUpViewController: UIViewController {
     }
     
     func updateDifficultyButtons() {
-//        guard let difficulty = setDifficulty() else { return }
         if difficulty == 1 {
             difficultyOneButton.alpha = 1.0
             difficultyTwoButton.alpha = 0.2
@@ -91,8 +92,12 @@ class FollowUpViewController: UIViewController {
         }
     }
     
-    func updateDifficultyDisplay(currentDifficulty: Int16) {
-        
+    func checkIfCommitmentWasKept() -> Bool {
+        if commitmentKeptSwitch.isOn == true {
+            return true
+        } else {
+            return false
+        }
     }
     
     func setReasonLabelText() -> String? {
@@ -100,6 +105,7 @@ class FollowUpViewController: UIViewController {
             return "Today I have commited to stay sober!" }
         return  "I have commited to stay sober because \(reason)"
     }
+    
     func setImage() -> UIImage? {
         guard let unwrappedImageDate = commitment?.motivationalImage,
             let image = UIImage(data: unwrappedImageDate) else { return nil }
@@ -114,7 +120,11 @@ class FollowUpViewController: UIViewController {
         }
     }
     
-    
+    func formatCurrentDate() -> String? {
+        guard let commitmentDate = commitment?.currentDate else { return nil }
+        dateFormatter.dateFormat = "EEEE, MMMM d"
+        return dateFormatter.string(from: commitmentDate)
+    }
     
     //==================================================
     // MARK: - Actions
@@ -146,16 +156,22 @@ class FollowUpViewController: UIViewController {
         updateDifficultyButtons()
     }
     
+    @IBAction func commitmentKeptSwitchFlipped(_ sender: Any) {
+        if commitmentKeptSwitch.isOn == true {
+            commitmentKeptLabel.text = "Yes"
+        } else if commitmentKeptSwitch.isOn == false {
+            commitmentKeptLabel.text = "No"
+        }
+    }
+    
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let commitment = commitment,
         let difficulty = difficulty else { return }
         commitment.difficulty = difficulty
         commitment.notes = checkForNotes()
+        commitment.commitmentKept = checkIfCommitmentWasKept()
         ModelController.sharedController.saveToPersistentStorage()
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
-    
-    
 }
