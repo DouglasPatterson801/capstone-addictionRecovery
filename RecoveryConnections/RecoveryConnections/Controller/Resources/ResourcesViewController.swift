@@ -22,6 +22,11 @@ class ResourcesViewController: UIViewController {
     //==================================================
 
     let twelveStepsOrg = URL(string: "http://www.12step.org/")
+    let alcoholicsAnonymous = URL(string: "https://www.aa.org/")
+    let sexaholicsAnonymous = URL(string: "https://www.sa.org/")
+    let ldsAddictionRecovery = URL(string: "https://addictionrecovery.lds.org/?lang=eng")
+    let narcoticsAnonymous = URL(string: "https://www.na.org/")
+    let additionalLinks = URL(string: "https://www.addictionsandrecovery.org/addiction-recovery-links.htm")
     
     
     
@@ -39,9 +44,31 @@ class ResourcesViewController: UIViewController {
     // MARK: - Actions
     //==================================================
 
+    @IBAction func alcoholicsAnonButtonTapped(_ sender: Any) {
+        goToWebsite(url: alcoholicsAnonymous)
+    }
+    
+    @IBAction func narcoticsAnonButtonTapped(_ sender: Any) {
+        goToWebsite(url: narcoticsAnonymous)
+    }
+    
     @IBAction func twelveStepsButtonTapped(_ sender: Any) {
         goToWebsite(url: twelveStepsOrg)
     }
+    
+    @IBAction func sexAddictsAnonButtonTapped(_ sender: Any) {
+        goToWebsite(url: sexaholicsAnonymous)
+    }
+    
+    @IBAction func faithRecoveryButtonTapped(_ sender: Any) {
+        goToWebsite(url: ldsAddictionRecovery)
+    }
+    
+    @IBAction func additionalResourcesButtonTapped(_ sender: Any) {
+        goToWebsite(url: additionalLinks)
+    }
+    
+    
     
     
 }

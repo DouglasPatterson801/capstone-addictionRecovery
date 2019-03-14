@@ -44,6 +44,9 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.backGroundImageView.frame = self.view.bounds
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     //==================================================
     // MARK: - Functions
@@ -82,14 +85,4 @@ class HomeViewController: UIViewController {
     @IBAction func sobrietyCounterButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "setDateSegue", sender: Any?.self)
     }
-    
-    //==================================================
-    // MARK: - Navigation
-    //==================================================
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "setDateSegue" {
-            var sobrietyDateViewController = segue.destination as! SobrietyDateViewController
-        }
-    }
-    
 }

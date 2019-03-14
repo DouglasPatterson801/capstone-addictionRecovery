@@ -15,17 +15,14 @@ class CommitmentListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-        // MARK: - Table view data source
+    //==================================================
+    // MARK: - TableView Data Source
+    //==================================================
 
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        checkIfCommitmentHasBeenMadeToday()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,10 +37,10 @@ class CommitmentListTableViewController: UITableViewController {
     }
     
     
+    //==================================================
+    // MARK: - Functions
+    //==================================================
 
-
-  
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let commitment = ModelController.sharedController.commitmentArray.reversed()[indexPath.row]
@@ -52,7 +49,18 @@ class CommitmentListTableViewController: UITableViewController {
         }     
     }
     
-
+    func checkIfCommitmentHasBeenMadeToday() {
+        let commitmentArray = ModelController.sharedController.commitmentArray
+        let latestCommitment = commitmentArray.last
+        if latestCommitment?.currentDate == Date() {
+            self.navigationController!.navigationBar.isUserInteractionEnabled = false
+            self.navigationController!.view.isUserInteractionEnabled = false
+    
+        }
+        
+        
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

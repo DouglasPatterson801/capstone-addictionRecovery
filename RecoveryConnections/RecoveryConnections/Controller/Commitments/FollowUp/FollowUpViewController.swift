@@ -40,6 +40,8 @@ class FollowUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         self.navigationItem.title = formatCurrentDate()
         difficultyLabel.text = ""
         motivationalImage.image = setImage()
@@ -52,6 +54,28 @@ class FollowUpViewController: UIViewController {
     //==================================================
     // MARK: - Functions
     //==================================================
+    
+    func checkforImage() {
+        if commitment?.motivationalImage == nil {
+            motivationalImage.isHidden = true
+        }
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    //Commitment Difficulty
     
     func setDifficulty() {
         guard let commitmentDifficulty = commitment?.difficulty else { return }
@@ -99,11 +123,21 @@ class FollowUpViewController: UIViewController {
             return false
         }
     }
+
+    func formatCurrentDate() -> String? {
+        guard let commitmentDate = commitment?.currentDate else { return nil }
+        dateFormatter.dateFormat = "EEEE, MMMM d"
+        return dateFormatter.string(from: commitmentDate)
+    }
     
     func setReasonLabelText() -> String? {
         guard let reason = commitment?.reason else {
             return "Today I have commited to stay sober!" }
-        return  "I have commited to stay sober because \(reason)"
+        if reason == "" {
+             return "Today I have commited to stay sober!"
+        } else {
+            return "I have commited to stay sober because \(reason)"
+        }
     }
     
     func setImage() -> UIImage? {
@@ -120,11 +154,6 @@ class FollowUpViewController: UIViewController {
         }
     }
     
-    func formatCurrentDate() -> String? {
-        guard let commitmentDate = commitment?.currentDate else { return nil }
-        dateFormatter.dateFormat = "EEEE, MMMM d"
-        return dateFormatter.string(from: commitmentDate)
-    }
     
     //==================================================
     // MARK: - Actions

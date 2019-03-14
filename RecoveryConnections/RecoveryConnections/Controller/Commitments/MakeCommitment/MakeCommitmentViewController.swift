@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MakeCommitmentViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class MakeCommitmentViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     //==================================================
     // MARK: - Properties
     //==================================================
@@ -31,6 +31,8 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.reasonTextField.delegate = self
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +43,11 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
     // MARK: - Functions
     //==================================================
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     func updateSetImageButtonText() {
         if motivationalImage.image != UIImage(named: "noImageSelected"){
             setImageButton.setTitle("Change Image", for: .normal)
@@ -49,7 +56,7 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
     
     func checkForUploadedImage() -> UIImage? {
         if motivationalImage.image == UIImage(named: "noImageSelected") {
-            return nil
+            return UIImage(named: "defaultPhoto")
         } else {
             guard let unwrappedMotivationImage = motivationalImage.image else { return nil }
             return unwrappedMotivationImage
@@ -74,7 +81,6 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
                 print("could not safely unwrap either reasonTextField of motivationalImage")
                 return
         }
-        
         let motivationalImage = unwrappedImage.jpegData(compressionQuality: 0.5)
         let commitmentMade = true
         let currentDate = Date()
@@ -86,6 +92,18 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
             ModelController.sharedController.createCommitment(reason: reason, commitmentMade: commitmentMade, commitmentKept: nil, difficulty: nil, currentDate: currentDate, notes: nil, motivationalImage: motivationalImage)
         }
         self.navigationController?.popViewController(animated: true)
+    }    
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
+
