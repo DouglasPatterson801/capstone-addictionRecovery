@@ -18,19 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-nm-eb9">
-                                <rect key="frame" x="0.0" y="90" width="414" height="515"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="505"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Today marks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiT-ii-Fb4">
-                                        <rect key="frame" x="131.66666666666666" y="0.0" width="150.99999999999997" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="KMU-X4-Tcj"/>
-                                        </constraints>
+                                        <rect key="frame" x="131.66666666666666" y="0.0" width="150.99999999999997" height="30"/>
                                         <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="25"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Di-An-HDh" customClass="RoundButton" customModule="RecoveryConnections" customModuleProvider="target">
-                                        <rect key="frame" x="117" y="45" width="180" height="120"/>
+                                        <rect key="frame" x="117" y="35" width="180" height="120"/>
                                         <color key="backgroundColor" red="0.1607568929" green="0.31712049440000001" blue="0.4010438113" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="e08-6R-EGo"/>
@@ -55,7 +52,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days of sobriety!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXz-wl-wT4">
-                                        <rect key="frame" x="109.33333333333333" y="170" width="195.33333333333337" height="40"/>
+                                        <rect key="frame" x="109.33333333333333" y="160" width="195.33333333333337" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="oaZ-Jq-Hje"/>
                                         </constraints>
@@ -64,7 +61,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motivational Quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rv-Q4-58M">
-                                        <rect key="frame" x="40" y="215" width="334" height="300"/>
+                                        <rect key="frame" x="40" y="205" width="334" height="300"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="TPV-0l-Ynp"/>
@@ -103,17 +100,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="-176.76161919040482"/>
+            <point key="canvasLocation" x="1074" y="11"/>
         </scene>
         <!--Commitment List Table View Controller-->
         <scene sceneID="ha2-z0-8tq">
             <objects>
                 <tableViewController id="yiA-1U-x46" customClass="CommitmentListTableViewController" customModule="RecoveryConnections" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d5q-Gc-b59">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d5q-Gc-b59">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="0.0" green="0.50437389960000001" blue="0.49110287429999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.21583032460000001" green="0.43802263889999998" blue="0.55381719559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.21583032460000001" green="0.43802263889999998" blue="0.55381719559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commitmentCell" id="sHe-hc-V10" customClass="CommitmentListTableViewCell" customModule="RecoveryConnections" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -146,7 +144,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmD-nd-GK2">
                                             <rect key="frame" x="189" y="11.333333333333336" width="36" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -161,6 +159,7 @@
                                         <constraint firstItem="0U2-v2-bKv" firstAttribute="leading" secondItem="mKT-9j-jEV" secondAttribute="leading" constant="8" id="z9H-ma-jQI"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.21583032460000001" green="0.43802263889999998" blue="0.55381719559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="completionImageView" destination="0U2-v2-bKv" id="BA3-fK-SJa"/>
                                     <outlet property="dateLabel" destination="nmD-nd-GK2" id="XQ9-qe-b22"/>
@@ -177,6 +176,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="dGc-4c-yBJ">
                         <barButtonItem key="rightBarButtonItem" title="Make Today's Commitment" id="11K-3v-j9J">
+                            <color key="tintColor" red="0.21583032460000001" green="0.43802263889999998" blue="0.55381719559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="nVo-G3-oxv" kind="show" id="Xz0-mr-5O0"/>
                             </connections>
@@ -282,7 +282,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Krv-lX-Yr4"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Make Today's Commitment" id="QVM-PJ-26G"/>
+                    <navigationItem key="navigationItem" title="Make Today's Commitment" largeTitleDisplayMode="always" id="QVM-PJ-26G"/>
                     <connections>
                         <outlet property="commitButton" destination="zy8-gz-3fV" id="F1P-nd-0j2"/>
                         <outlet property="motivationalImage" destination="hvL-c8-D2o" id="aKq-or-MIr"/>
@@ -380,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7O-21-raZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1949.5999999999999" y="-177.66116941529236"/>
+            <point key="canvasLocation" x="2019" y="11"/>
         </scene>
         <!--Follow Up-->
         <scene sceneID="jvb-SW-Obt">
@@ -409,11 +409,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cph-Dz-QVr">
-                                                <rect key="frame" x="82" y="733.33333333333337" width="250" height="150"/>
-                                                <color key="backgroundColor" red="0.68577739410000005" green="0.91456572530000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="57" y="733.33333333333337" width="300" height="150"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="6KV-OW-12u"/>
-                                                    <constraint firstAttribute="width" constant="250" id="Uwf-dx-A2Z"/>
+                                                    <constraint firstAttribute="width" constant="300" id="Uwf-dx-A2Z"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -573,8 +573,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SnX-ao-6DR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Follow Up" id="ggF-KZ-YYP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6Ey-z9-EKu">
+                    <navigationItem key="navigationItem" title="Follow Up" largeTitleDisplayMode="always" id="ggF-KZ-YYP">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="6Ey-z9-EKu">
+                            <color key="tintColor" red="0.21583032460000001" green="0.43802263889999998" blue="0.55381719559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveButtonTapped:" destination="FHF-0f-MPn" id="lkH-JV-4oG"/>
                             </connections>
@@ -614,8 +615,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resources" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GQ-xh-lNh">
-                                                <rect key="frame" x="122.00000000000001" y="8" width="170.33333333333337" height="53"/>
-                                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="34"/>
+                                                <rect key="frame" x="89.333333333333329" y="8" width="235.66666666666669" height="53"/>
+                                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="47"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -718,7 +719,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.21583032460000001" green="0.43802263889999998" blue="0.55381719559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Qe8-Bf-ECO" firstAttribute="centerX" secondItem="tle-52-fwX" secondAttribute="centerX" id="O84-Wo-AN9"/>
                                             <constraint firstAttribute="bottom" secondItem="Qe8-Bf-ECO" secondAttribute="bottom" constant="20" id="QJ7-So-Pzw"/>
@@ -753,12 +754,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wn0-TN-e3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="1706"/>
+            <point key="canvasLocation" x="1075" y="1659"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="50R-VJ-Y2m">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="DWg-Rc-7mr" customClass="TabBarController" customModule="RecoveryConnections" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="DWg-Rc-7mr" customClass="CustomTabBarController" customModule="RecoveryConnections" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CBN-JS-Flb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

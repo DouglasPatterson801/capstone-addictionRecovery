@@ -11,7 +11,6 @@ import CoreData
 
 extension StartDate {
     convenience init?(sobrietyDate: Date, context: NSManagedObjectContext = Stack.context) {
-        
         self.init(context: context)
         self.sobrietyDate = sobrietyDate
     }

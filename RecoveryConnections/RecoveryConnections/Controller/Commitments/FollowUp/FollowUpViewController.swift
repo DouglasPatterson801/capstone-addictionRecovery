@@ -10,7 +10,6 @@ import UIKit
 
 class FollowUpViewController: UIViewController {
     
-    
     //==================================================
     // MARK: - Properties
     //==================================================
@@ -19,7 +18,7 @@ class FollowUpViewController: UIViewController {
     var difficulty: Int16?
     let dateFormatter = DateFormatter()
     let alertControler = UIAlertController()
-    
+
     //Outlets
     
     @IBOutlet weak var reasonLabel: UILabel!
@@ -55,11 +54,11 @@ class FollowUpViewController: UIViewController {
     // MARK: - Functions
     //==================================================
     
-    func checkforImage() {
-        if commitment?.motivationalImage == nil {
-            motivationalImage.isHidden = true
-        }
-    }
+//    func checkforImage() {
+//        if commitment?.motivationalImage == nil {
+//            motivationalImage.image = UIImage(named: "defaultPhoto")
+//        }
+//    }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -142,7 +141,8 @@ class FollowUpViewController: UIViewController {
     
     func setImage() -> UIImage? {
         guard let unwrappedImageDate = commitment?.motivationalImage,
-            let image = UIImage(data: unwrappedImageDate) else { return nil }
+            let image = UIImage(data: unwrappedImageDate) else {
+                return UIImage(named: "defaultPhoto") }
         return image
     }
     
@@ -153,7 +153,6 @@ class FollowUpViewController: UIViewController {
             return nil
         }
     }
-    
     
     //==================================================
     // MARK: - Actions
@@ -192,8 +191,7 @@ class FollowUpViewController: UIViewController {
             commitmentKeptLabel.text = "No"
         }
     }
-    
-    
+        
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let commitment = commitment,
         let difficulty = difficulty else { return }

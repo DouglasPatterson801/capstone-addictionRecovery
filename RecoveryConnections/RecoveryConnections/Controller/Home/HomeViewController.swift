@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     //==================================================
     // MARK: - Properties
     //==================================================
+    
     let backGroundImageView = UIImageView()
     let dailyQuote: Quote? = {
         QuoteController.sharedController.getDailyQuote()
@@ -28,6 +29,7 @@ class HomeViewController: UIViewController {
     //==================================================
     // MARK: - View Lifecycle
     //==================================================
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         populateDailyQuote()
@@ -44,6 +46,7 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.backGroundImageView.frame = self.view.bounds
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -51,6 +54,7 @@ class HomeViewController: UIViewController {
     //==================================================
     // MARK: - Functions
     //==================================================
+    
     func getBackGroundImage() {
         let image = UIImage(named: "riverImage3")
         self.backGroundImageView.contentMode = .scaleAspectFill
@@ -62,8 +66,8 @@ class HomeViewController: UIViewController {
     func setSobrietyCounter() {
         if ModelController.sharedController.startDateArray.isEmpty == true {
             todayMarksLabel.text = "Use this counter to measure your success!"
-            sobrietyCounterButton.setTitle("Tap Here", for: .normal)
-            daysOfSobrietyLabel.text = ""
+            sobrietyCounterButton.setTitle("", for: .normal)
+            daysOfSobrietyLabel.text = "Tap the box to get started."
             
         } else {
            guard let daysSober = SobrietyCounterController.sharedController.getNumberOfDaysSober() else { return }
@@ -82,6 +86,7 @@ class HomeViewController: UIViewController {
     //==================================================
     // MARK: - Actions
     //==================================================
+    
     @IBAction func sobrietyCounterButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "setDateSegue", sender: Any?.self)
     }

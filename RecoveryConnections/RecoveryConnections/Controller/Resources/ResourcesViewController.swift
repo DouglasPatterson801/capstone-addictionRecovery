@@ -11,16 +11,17 @@ import SafariServices
 
 class ResourcesViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     //==================================================
     // MARK: - Properties
     //==================================================
 
+    let backGroundImageView = UIImageView()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    //URLs
     let twelveStepsOrg = URL(string: "http://www.12step.org/")
     let alcoholicsAnonymous = URL(string: "https://www.aa.org/")
     let sexaholicsAnonymous = URL(string: "https://www.sa.org/")
@@ -28,11 +29,32 @@ class ResourcesViewController: UIViewController {
     let narcoticsAnonymous = URL(string: "https://www.na.org/")
     let additionalLinks = URL(string: "https://www.addictionsandrecovery.org/addiction-recovery-links.htm")
     
+    //==================================================
+    // MARK: - View LifeCycle
+    //==================================================
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getBackGroundImage()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.backGroundImageView.frame = self.view.bounds
+    }
     
     
     //==================================================
     // MARK: - Functions
     //==================================================
+
+    func getBackGroundImage() {
+        let image = UIImage(named: "riverImage3")
+        self.backGroundImageView.contentMode = .scaleAspectFill
+        self.backGroundImageView.image = image
+        self.view.addSubview(backGroundImageView)
+        view.sendSubviewToBack(backGroundImageView)
+    }
     
     func goToWebsite(url: URL?) {
         guard let url = url else { return }
@@ -67,8 +89,4 @@ class ResourcesViewController: UIViewController {
     @IBAction func additionalResourcesButtonTapped(_ sender: Any) {
         goToWebsite(url: additionalLinks)
     }
-    
-    
-    
-    
 }
