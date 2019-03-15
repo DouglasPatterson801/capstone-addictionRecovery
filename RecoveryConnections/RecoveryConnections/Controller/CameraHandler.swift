@@ -58,18 +58,16 @@ class CameraHandler: NSObject{
     
 }
 
-
 extension CameraHandler: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         currentVC.dismiss(animated: true, completion: nil)
     }
     
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.imagePickedBlock?(image)
         }else{
-            print("Something went wrong")
+            print("Something went wrong getting the picked image.")
         }
         currentVC.dismiss(animated: true, completion: nil)
     }
