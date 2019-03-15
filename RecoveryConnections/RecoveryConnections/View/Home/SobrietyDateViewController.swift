@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class SobrietyDateViewController: UIViewController {
+    
     //==================================================
     // MARK: - Properties
     //==================================================
@@ -49,6 +50,7 @@ class SobrietyDateViewController: UIViewController {
     //==================================================
     // MARK: - Actions
     //==================================================
+    
     @IBAction func datePickerChanged(_ sender: Any) {
     }
     
@@ -61,5 +63,4 @@ class SobrietyDateViewController: UIViewController {
     @IBAction func cancelButtonTapped(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
     }
-    
 }

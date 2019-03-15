@@ -10,12 +10,13 @@ import UIKit
 import CoreData
 
 class MakeCommitmentViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+    
     //==================================================
     // MARK: - Properties
     //==================================================
+    
     let commitmentMade = false
     var difficultyRating: Int16? = 0
-    
     var commitmentArray = ModelController.sharedController.commitmentArray
     var commitment: Commitment? 
     
@@ -72,7 +73,6 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
         CameraHandler.shared.imagePickedBlock = { (image) in
             self.motivationalImage.image = image
         }
-        
     }
     
     @IBAction func commitButtonTapped(_ sender: Any) {

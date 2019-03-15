@@ -24,10 +24,9 @@ class SobrietyCounterController {
         startDate = ModelController.sharedController.startDateArray.last
         guard let sobrietyDate = startDate?.sobrietyDate else { return nil }
         let differenceInDays = Calendar.current.dateComponents([.day], from: sobrietyDate, to: currentDate).day
-        print(differenceInDays)
+        print(differenceInDays as Any)
         return differenceInDays
     }
-    
 }
 
 

@@ -27,6 +27,7 @@ class CommitmentListTableViewCell: UITableViewCell {
     //==================================================
     // MARK: - Actions
     //==================================================
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

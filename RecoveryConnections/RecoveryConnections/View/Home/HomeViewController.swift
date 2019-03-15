@@ -82,12 +82,4 @@ class HomeViewController: UIViewController {
             dailyQuoteLabel.text = "\(quote.quoteText)"
         }
     }
-    
-    //==================================================
-    // MARK: - Actions
-    //==================================================
-    
-    @IBAction func sobrietyCounterButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "setDateSegue", sender: Any?.self)
-    }
 }

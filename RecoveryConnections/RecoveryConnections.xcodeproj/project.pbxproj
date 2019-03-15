@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F17E715221F025E0075F804 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E714221F025E0075F804 /* TabBarController.swift */; };
 		2F17E71B2220587D0075F804 /* MakeCommitmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E71A2220587D0075F804 /* MakeCommitmentViewController.swift */; };
 		2F17E71D22205B630075F804 /* CommitmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E71C22205B630075F804 /* CommitmentListTableViewController.swift */; };
 		2F17E72522243F380075F804 /* SobrietyDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17E72422243F380075F804 /* SobrietyDateViewController.swift */; };
@@ -34,7 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F17E714221F025E0075F804 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2F17E71A2220587D0075F804 /* MakeCommitmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCommitmentViewController.swift; sourceTree = "<group>"; };
 		2F17E71C22205B630075F804 /* CommitmentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitmentListTableViewController.swift; sourceTree = "<group>"; };
 		2F17E72422243F380075F804 /* SobrietyDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobrietyDateViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				2F9B715422173482001CC363 /* HomeViewController.swift */,
-				2F9B71482215BBC5001CC363 /* QuoteController.swift */,
 				2F17E72422243F380075F804 /* SobrietyDateViewController.swift */,
 				2F17E726222449BC0075F804 /* SobrietyCounterController.swift */,
 			);
@@ -168,9 +165,7 @@
 				2F9B7126220DD575001CC363 /* AppDelegate.swift */,
 				2F2500BB222D8E2900420230 /* CameraHandler.swift */,
 				2F5C46E6221DA2ED008C1491 /* ModelController.swift */,
-				2F17E71E22205B7E0075F804 /* Home */,
-				2F17E71F22205B840075F804 /* Commitments */,
-				2F3A0F0522330E9C0032AA37 /* Resources */,
+				2F9B71482215BBC5001CC363 /* QuoteController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,11 +173,21 @@
 		2F9B713C22136029001CC363 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2F9B7138220DEFBC001CC363 /* RoundButton.swift */,
-				2F17E714221F025E0075F804 /* TabBarController.swift */,
-				2FBF5CD5223BE94000141FF6 /* CustomTabBarController.swift */,
+				2FBF5CD7223C047300141FF6 /* Custom UI Classes */,
+				2F17E71E22205B7E0075F804 /* Home */,
+				2F17E71F22205B840075F804 /* Commitments */,
+				2F3A0F0522330E9C0032AA37 /* Resources */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2FBF5CD7223C047300141FF6 /* Custom UI Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2FBF5CD5223BE94000141FF6 /* CustomTabBarController.swift */,
+				2F9B7138220DEFBC001CC363 /* RoundButton.swift */,
+			);
+			path = "Custom UI Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +276,6 @@
 				2F8BDAB6221CAAC000243D41 /* Commitment.swift in Sources */,
 				2F9B7127220DD575001CC363 /* AppDelegate.swift in Sources */,
 				2F9B714D2215CF38001CC363 /* StartDate.swift in Sources */,
-				2F17E715221F025E0075F804 /* TabBarController.swift in Sources */,
 				2F17E71D22205B630075F804 /* CommitmentListTableViewController.swift in Sources */,
 				2F5C46E7221DA2ED008C1491 /* ModelController.swift in Sources */,
 				2F3A0F02223079AE0032AA37 /* FollowUpViewController.swift in Sources */,

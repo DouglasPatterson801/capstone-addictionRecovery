@@ -54,12 +54,6 @@ class FollowUpViewController: UIViewController {
     // MARK: - Functions
     //==================================================
     
-//    func checkforImage() {
-//        if commitment?.motivationalImage == nil {
-//            motivationalImage.image = UIImage(named: "defaultPhoto")
-//        }
-//    }
-    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -163,21 +157,25 @@ class FollowUpViewController: UIViewController {
         difficulty = 1
         updateDifficultyButtons()
     }
+    
     @IBAction func difficultyTwoButtonTapped(_ sender: Any) {
         difficultyLabel.text = "Good!"
         difficulty = 2
         updateDifficultyButtons()
     }
+    
     @IBAction func difficultyThreeButtonTapped(_ sender: Any) {
         difficultyLabel.text = "Ok"
         difficulty = 3
         updateDifficultyButtons()
     }
+    
     @IBAction func difficultyFourButtonTapped(_ sender: Any) {
         difficultyLabel.text = "That was tough."
         difficulty = 4
         updateDifficultyButtons()
     }
+    
     @IBAction func difficultyFiveButtonTapped(_ sender: Any) {
         difficultyLabel.text = "Near impossible.."
         difficulty = 5
