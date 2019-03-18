@@ -14,6 +14,7 @@ class CommitmentListTableViewCell: UITableViewCell {
     //==================================================
     // MARK: - Properties
     //==================================================
+    
     var commitment: Commitment?
     var todaysDate = Date()
     var dateFormatter = DateFormatter()
@@ -25,7 +26,7 @@ class CommitmentListTableViewCell: UITableViewCell {
     @IBOutlet weak var notesImageView: UIImageView!
     
     //==================================================
-    // MARK: - Actions
+    // MARK: - View Lifecycle
     //==================================================
     
     override func awakeFromNib() {
@@ -35,6 +36,10 @@ class CommitmentListTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    //==================================================
+    // MARK: - Functions
+    //==================================================
     
     func checkForCompletion() -> UIImage? {
         guard let commitment = commitment else { return nil }
@@ -48,11 +53,7 @@ class CommitmentListTableViewCell: UITableViewCell {
             return nil
         }
     }
-    
-    //==================================================
-    // MARK: - Functions
-    //==================================================
-    
+
     func checkForDifficulty() -> UIImage? {
         guard let commitment = commitment else { return nil }
         if commitment.difficulty == 1 {

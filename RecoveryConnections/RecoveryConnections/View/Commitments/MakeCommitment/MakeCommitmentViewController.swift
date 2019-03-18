@@ -95,6 +95,8 @@ class MakeCommitmentViewController: UIViewController, UINavigationControllerDele
     }    
 }
 
+// Addition Keyboard Functionality for the View Controller
+
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
