@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CameraHandler: NSObject{
+class CameraHandler: NSObject {
     static let shared = CameraHandler()
     
     fileprivate var currentVC: UIViewController!

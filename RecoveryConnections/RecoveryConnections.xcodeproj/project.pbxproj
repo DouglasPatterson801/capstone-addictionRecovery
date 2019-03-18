@@ -76,7 +76,6 @@
 			children = (
 				2F9B715422173482001CC363 /* HomeViewController.swift */,
 				2F17E72422243F380075F804 /* SobrietyDateViewController.swift */,
-				2F17E726222449BC0075F804 /* SobrietyCounterController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -166,6 +165,7 @@
 				2F2500BB222D8E2900420230 /* CameraHandler.swift */,
 				2F5C46E6221DA2ED008C1491 /* ModelController.swift */,
 				2F9B71482215BBC5001CC363 /* QuoteController.swift */,
+				2F17E726222449BC0075F804 /* SobrietyCounterController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
